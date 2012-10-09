@@ -1,5 +1,5 @@
 package com.taiwanmobile.myBook_PAD;
-import java.io.BufferedReader;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -7,12 +7,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -54,7 +53,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.StatFs;
-import android.telephony.TelephonyManager;
+
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -65,7 +64,6 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.gsimedia.sa.GSiMediaInputStreamProvider;
 import com.gsimedia.sa.GSiMediaRegisterProcess.DataClass;
 import com.gsimedia.sa.GSiMediaRegisterProcess.DeviceIDException;
 import com.gsimedia.sa.GSiMediaRegisterProcess.GSiMediaRegisterProcess;
@@ -73,6 +71,7 @@ import com.gsimedia.sa.GSiMediaRegisterProcess.IllegalNetworkException;
 import com.gsimedia.sa.GSiMediaRegisterProcess.TimeOutException;
 import com.gsimedia.sa.GSiMediaRegisterProcess.XmlException;
 import com.gsimedia.sa.GSiMediaRegisterProcess.XmlP12FileException;
+import com.taiwanmobile.Constant;
 import com.taiwanmobile.myBook_PAD.BookList.ViewHolder;
 import com.twm.android.ssoutil.LoginData;
 import com.twm.android.ssoutil.TWMAuth;
@@ -82,13 +81,11 @@ import com.twm.android.ssoutil.TWMAuthListener;
 public class RealBookcase extends Activity {
 	
 	private static final String TAG = "RealBookcase" ;
-	private static final boolean CAN_RUN_ON_PHONE = true ;
 	private static final boolean DEBUG = true ;
  
 	private boolean mIsEdit;
 	
-    private Cursor cursorDBData;
-	private String deviceID = "";
+    private String deviceID = "";
 	private String p12Path;
 
 	private String downloadBookUrl;
@@ -108,26 +105,13 @@ public class RealBookcase extends Activity {
 		super();
 	}
 
-	//add
-	private long downloadHeapSize = 0;
 	public ViewHolder[] mainRow = null;
 	private ImageButton ib_buy,ib_edit,ib_tools,ib_up_page,ib_del_top,ib_del_bottom,ib_all_select,ib_all_unselect,ib_realbook,ib_listbook,ib_auth;
 	private RelativeLayout rl_top , rl_center , rl_edit_mode , rl_main;
-	private int nowStyle = 1;//未讀 1 已讀 2  全部 3 4 5
 	private ListView lv_main;	
-	private Boolean[] allCheckBoxValue = null;
-	private Boolean downloadStatus = false;
-		
-	private long freeSize;
 	private StatFs stat;
-	private int nowDownloadNum = 0;
-	private final static int MAX_DOWNLOAD_NUM = 5;//上限 5   
 	private RelativeLayout rl_tools_alert_dialog;
-	private List<String> pbarNowStatusList = new ArrayList<String>();
-	private List<Integer> pbarValueList = new ArrayList<Integer>();
-	private List<String> downloadID  = new ArrayList<String>();
 	
-	private static final String BRAND_XML = "/brand.xml";
 	public final static int listbook = 0;
 	public final static int realbook = 1;
 	public final static int onlinebook = 2;
@@ -156,7 +140,7 @@ public class RealBookcase extends Activity {
 		
         final HttpEntity entity = response.getEntity();
         InputStream is = entity.getContent();
-		String fileDir = getFilesDir().toString()+BRAND_XML;	
+		String fileDir = getFilesDir().toString()+Constant.BRAND_XML;	
 
 		FileOutputStream fos;
 		fos = new FileOutputStream(new File(fileDir));
@@ -174,47 +158,8 @@ public class RealBookcase extends Activity {
         
         entity.consumeContent();
 	}	
-	
-    static final String convertStreamToString(InputStream is) {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is), 8*1024);
-        StringBuilder sb = new StringBuilder();
- 
-        String line = null;
-        try {
-            while ((line = reader.readLine()) != null) {
-                sb.append(line + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
- 
-        return sb.toString();
-    }  
+	  
 
-	private HashMap<Integer, Long> mThreadMap = new HashMap<Integer, Long>() ;
-	
-	private synchronized void addThreadMap(int pos , long timeStamp){
-		//mDownloadIDs.add(id);
-		mThreadMap.put(pos, timeStamp);
-		
-		
-		if (DEBUG) Log.w("vic", "pos:"+ pos + " timeStamp:"+ timeStamp);
-	}	
-	
-	private synchronized long getTimeStamp(int pos){
-		Long obj =  mThreadMap.get(new Integer(pos));
-		if (null == obj){
-			return 0 ;
-		}
-		
-		return obj.longValue();
-	}	
 	private static Handler mInitHandler = new Handler();  
     
 	Runnable mUpdateResults = new Runnable() {  
@@ -239,7 +184,7 @@ public class RealBookcase extends Activity {
 		
 		testNetwork();
 		setContentView(R.layout.realbookcase);
-		settings = getSharedPreferences("setting_Preference", 0);
+		settings = getSharedPreferences(Constant.PREFS_SETTING_PREFERENCE, 0);
 		setViewComponent();
 		mContext = this;
 		//RealBookStartup(true);
@@ -255,17 +200,15 @@ public class RealBookcase extends Activity {
     /**
      * first open preference
      */
-	private static final String EPrefName = "TWMPref";
-	private static final String EPrefInit= "PREF_INIT";
 	private void firstOpen(){
-		SharedPreferences settings = getSharedPreferences(EPrefName, 0);
+		SharedPreferences settings = getSharedPreferences(Constant.PREFS_NAME, 0);
 		SharedPreferences.Editor editor = settings.edit();
-		editor.putBoolean(EPrefInit, true);
+		editor.putBoolean(Constant.PREF_INIT, true);
 		editor.commit();
 	}
 	private boolean hasOpened(){
-		SharedPreferences aSettings = getSharedPreferences(EPrefName, 0);
-		return aSettings.getBoolean(EPrefInit, false);
+		SharedPreferences aSettings = getSharedPreferences(Constant.PREFS_NAME, 0);
+		return aSettings.getBoolean(Constant.PREF_INIT, false);
 	}
     /**
      * dialog related
@@ -306,7 +249,7 @@ public class RealBookcase extends Activity {
     	if (deviceID == null) deviceID = "";
 		p12Path = this.getFilesDir().toString();
 		
-		settings = getSharedPreferences("setting_Preference", 0);
+		settings = getSharedPreferences(Constant.PREFS_SETTING_PREFERENCE, 0);
 		tdb = new TWMDB(this);
 		
 		saveFilelocation = Util.getStorePath(this);
@@ -914,7 +857,6 @@ public class RealBookcase extends Activity {
 						}
 					}).show();
 		} else {
-			final Handler handler = mHandler;
 			new AlertDialog.Builder(this)
 				.setTitle(R.string.iii_VerUpdateMessage)
 				.setMessage(R.string.iii_VerUpdateMessageUnforce)
@@ -955,42 +897,23 @@ public class RealBookcase extends Activity {
 		try {
 			DataClass dataclass = GSiMediaRegisterProcess.checkDomain(this,RealBookcase.getToken());	
 			 if(dataclass !=  null) {
-				 String disString = "";
 				 if(dataclass.resultCode_P12 != null){
-					 disString += "resultCode_P12= ";
-					 disString += dataclass.resultCode_P12;
 				 }
 				 if(dataclass.resultCode_Domain != null){
-					 disString += ", resultCode_Domain= ";
-					 disString += dataclass.resultCode_Domain;
 				 }
 				 if(dataclass.domain != null){
-					 disString += ", domain= ";
-					 disString += dataclass.domain;
 				 }
 				 if(dataclass.index != null && dataclass.index.length > 0){
-					 disString += ", index[0]= ";
-					 disString += dataclass.index[0];
 				 }
 				 if(dataclass.type != null && dataclass.type.length > 0){
-					 disString += ", type[0]= ";
-					 disString += dataclass.type[0];
 				 }
 				 if(dataclass.index != null && dataclass.index.length > 1){
-					 disString += ", index[1]= ";
-					 disString += dataclass.index[1];
 				 }
 				 if(dataclass.type != null && dataclass.type.length > 1){
-					 disString += ", type[1]= ";
-					 disString += dataclass.type[1];
 				 }
 				 if(dataclass.index !=null && dataclass.index.length > 2){
-					 disString += ", index[2]= ";
-					 disString += dataclass.index[2];
 				 }
 				 if(dataclass.type != null && dataclass.type.length > 2){
-					 disString += ", type[2]= ";
-					 disString += dataclass.type[2];
 				 }
 				 needManage = false; 
 				 checkResultCode(0,dataclass.resultCode_P12,dataclass.resultCode_Domain,dataclass.index,dataclass.type);
@@ -1218,14 +1141,15 @@ public class RealBookcase extends Activity {
 //		ebook_cover_local_path = new ArrayList<String>();
 		
 		final Handler handler = mHandler;
-		boolean isAutoSync = settings.getBoolean("setting_auto_sync_new_book_value", true);
-//isAutoSync = false ;		//TODO for debug
+		boolean isAutoSync = settings.getBoolean(Constant.PREF_AUTO_SYNC_NEW_BOOK_VALUE, true);
+		//isAutoSync = false ;		
+		//TODO for debug
 		if (DEBUG) Log.e("flw", "downloadXML() = ["+isAutoSync+"]");
 		if (isAutoSync && unOnline) {
 
 			final String xml = getResources().getString(
 					R.string.iii_twm_download_list_by_updated)
-					+ String.valueOf(settings.getString("update_at", "0")) + "&device_id=" + deviceID+"&token="+token;
+					+ String.valueOf(settings.getString(Constant.PREF_UPDATE_AT, "0")) + "&device_id=" + deviceID+"&token="+token;
 			if(mXMLDlg != null){
 				mXMLDlg.setMessage(getResources().getString(R.string.iii_SyncMessage));
 				mXMLDlg.show();
@@ -1476,7 +1400,7 @@ public class RealBookcase extends Activity {
     	mBrandURLs = new ArrayList<String>();
     	mBrandFailURLs = new ArrayList<String>();
     	
-		String fileDir = getFilesDir().toString()+BRAND_XML;	
+		String fileDir = getFilesDir().toString()+Constant.BRAND_XML;	
 
 		try {
 			InputStream is = new FileInputStream(fileDir);
@@ -1559,8 +1483,6 @@ public class RealBookcase extends Activity {
 		final List<String> verticals = ebook_vertical;
 		final List<String> trial_due_dates = ebook_trial_due_date;
 		final List<String> covers = ebook_cover;
-		final List<String> bodytype_codes = ebook_bodytype_code;	
-
 		String tempTypeCover ,tempType;
 		final String mebookExt = getResources().getString(R.string.iii_mebook);
 		final TWMDB db = tdb ;
@@ -1596,9 +1518,6 @@ public class RealBookcase extends Activity {
 			c.close();
 		}
 	}  
-	
-	private static final int CONNECT_TIMEOUT = 15000 ; 
-	private static final int READ_TIMEOUT = 15000;	
 	
 	private String mApkDLUrl ;
 	
@@ -2053,12 +1972,6 @@ public class RealBookcase extends Activity {
 				},400);          	  		
       	  		
       	  		toolsAlert();
-      	  		
-      	  	// for gsi PDF testing
-//				Intent it = null;
-//				it= new Intent(TWMBook.this,RendererActivity.class);
-//			 	it.setData(Uri.parse(Config.FILESCHEME+"://"+Environment.getExternalStorageDirectory()+"/test.pdf"));	
-//			 	startActivity(it);      	  	      	  		
       	  	}	
         });   
     }
@@ -2069,7 +1982,6 @@ public class RealBookcase extends Activity {
 	private void calFreeSize() {
 		int size = stat.getBlockSize();
 		int num = stat.getAvailableBlocks();
-		freeSize = (long)num * size ;
 	}
 
 	/**
@@ -2180,12 +2092,6 @@ public class RealBookcase extends Activity {
 		m.setData(data);
 		mHandler.sendMessage(m);
 	}	
-	private void threadTestttMsg2(String msg) {
-		Message m = new Message();
-		Bundle data = m.getData();
-		data.putString("msg", msg);
-		testtt2.sendMessage(m);
-	}	
 	private Handler testtt2 = new Handler(){
 		@Override
 		public void handleMessage(Message msg) {
@@ -2198,7 +2104,6 @@ public class RealBookcase extends Activity {
 			lv_main.invalidateViews();	
 		}
 	};	
-	private long mLastUpdate = 0;
 	private boolean isListBookReady; 
 
 	/**
@@ -2227,7 +2132,7 @@ public class RealBookcase extends Activity {
 	 * 檢查存放路徑
 	 */
 	public void isInnerSD(){		
-		 File a = new File(getExternalFilesDir(null), "twmebook");
+		 File a = new File(getExternalFilesDir(null), Constant.FOLDER_NAME);
 		 saveFilelocation = a.getPath() + "/";
 		 new File(saveFilelocation).mkdir();
 		 
@@ -2254,7 +2159,6 @@ public class RealBookcase extends Activity {
 		try {
 			Thread.sleep(300);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		RealBookResume();
@@ -2314,7 +2218,6 @@ public class RealBookcase extends Activity {
 	 */
 	@Override
 	public boolean dispatchKeyEvent(KeyEvent event) {
-		// TODO Auto-generated method stub
     	if(isListBookReady){
  
     		return super.dispatchKeyEvent(event);
@@ -2342,7 +2245,6 @@ public class RealBookcase extends Activity {
 	 */
 	@Override
 	public boolean dispatchTouchEvent(MotionEvent ev) {
-		// TODO Auto-generated method stub
 		if(isListBookReady){
 			return super.dispatchTouchEvent(ev);
     	}else{
@@ -2356,9 +2258,7 @@ public class RealBookcase extends Activity {
     	}		
 
 	}	
-	public static TWMDB getTWMDB(){
-		return tdb;
-	}
+	
 	public static void setToken(String token) {
 		RealBookcase.token = token;
 	}
@@ -2669,11 +2569,6 @@ public class RealBookcase extends Activity {
 		return mContext;
 	}	
 	
-	private void setContext(Context pContext) {
-		// TODO Auto-generated method stub
-		mContext = pContext;
-	}
-
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus) {
 		// TODO Auto-generated method stub

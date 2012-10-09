@@ -6,4 +6,5 @@ import android.net.NetworkInfo;
 import android.util.Log;
 
 public class HttpUtils {
+	
 }
