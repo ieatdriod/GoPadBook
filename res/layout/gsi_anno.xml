@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:shelves="http://schemas.android.com/apk/res/com.gsimedia.gsiebook"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+
+	<RelativeLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/RelativeLayout_Title"
+		android:layout_gravity="top|center_horizontal">
+		<ImageView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_alignParentTop="true" android:background="@drawable/gsi_br06"/>
+		<Button android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_title_left"
+			android:background="@drawable/gsi_button01_btn"
+			android:layout_alignParentLeft="true" android:clickable="true"/>
+		<Button android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_title_right"
+			android:background="@drawable/gsi_button03_btn"
+			android:layout_alignParentRight="true"/>
+		<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/gsimedia_btn_title_left" android:id="@+id/gsimedia_title_bg"
+			android:src="@drawable/gsi_title_bg01"/>
+		<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/gsimedia_btn_title_left" android:id="@+id/gsimedia_title"
+			android:src="@drawable/gsi_title06"/>
+	</RelativeLayout>
+
+	<EditText android:id="@+id/text" android:hint="請輸入註記："
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_below="@id/RelativeLayout_Title"
+		android:textSize="18dip"
+		android:textColor="@android:color/black" android:gravity="top|left" android:background="#FFFFFF"/>
+
+</RelativeLayout>

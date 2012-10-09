@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<selector xmlns:android="http://schemas.android.com/apk/res/android">          
+ 
+    <item      
+   		android:id="@+id/sb_o"
+        android:state_pressed="true"      
+        android:drawable="@drawable/ani_time02" />     
+               
+    <item      
+    	android:id="@+id/sb_0"
+        android:state_focused="false"      
+        android:state_pressed="false"    
+        android:drawable="@drawable/ani_time02" />  
+  
+</selector>    

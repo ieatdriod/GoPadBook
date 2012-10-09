@@ -1,0 +1,17 @@
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="fill_parent"
+    android:layout_height="48dip"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:gravity="center_vertical"
+   
+    android:drawableRight="?android:attr/listChoiceIndicatorMultiple"
+	android:textColor="@android:color/black" 
+    
+    android:padding="10dip"
+    android:paddingLeft="3dip"
+    android:paddingRight="3dip"
+    
+    android:singleLine="true"
+    android:ellipsize="end"
+/>

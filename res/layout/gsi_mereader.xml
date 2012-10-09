@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:shelves="http://schemas.android.com/apk/res/com.gsimedia.gsiebook"
+	xmlns:pj="http://schemas.android.com/apk/res/com.taiwanmobile.myBook_PAD">
+	
+	<!-- header bar -->
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+		<RelativeLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/RelativeLayout_Title"
+			android:layout_gravity="top|center_horizontal" android:visibility="visible">
+			<ImageView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:background="@drawable/gsi_br01"
+				android:layout_alignParentTop="true" />
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_title_left"
+				android:background="@drawable/gsi_button01_btn"
+				android:layout_alignParentLeft="true" android:clickable="true" />
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:id="@+id/gsimedia_headline_left"
+				android:background="@drawable/gsi_head_line_left"
+				android:layout_toRightOf="@id/gsimedia_btn_title_left" />
+			<Button android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_title_right"
+				android:background="@drawable/gsi_button02_btn"
+				android:layout_alignParentRight="true" />
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:id="@+id/gsimedia_headline_right"
+				android:background="@drawable/gsi_head_line_right"
+				android:layout_toLeftOf="@+id/gsimedia_btn_title_right" />
+			<TextView android:id="@+id/gsimedia_title"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_toRightOf="@+id/gsimedia_headline_left"
+				android:layout_toLeftOf="@+id/gsimedia_headline_right"
+				android:layout_centerHorizontal="true" android:ellipsize="marquee"
+				android:marqueeRepeatLimit="marquee_forever" android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_alignBottom="@id/gsimedia_btn_title_left"
+				android:layout_alignTop="@id/gsimedia_btn_title_left"
+				android:padding="5dip" android:focusableInTouchMode="true"
+				android:focusable="true" android:gravity="center" android:textColor="#ffffff"
+				android:singleLine="true" android:text="" />
+		</RelativeLayout>
+		<ImageView android:layout_width="wrap_content"
+			android:visibility="invisible" android:layout_height="wrap_content"
+			android:id="@+id/gsimedia_img_bookmark" android:layout_below="@id/RelativeLayout_Title"
+			android:layout_alignParentRight="true" android:src="@drawable/gsi_tab02"
+			android:clickable="true" />
+		<ImageView android:layout_width="wrap_content"
+			android:visibility="invisible" android:layout_height="wrap_content"
+			android:id="@+id/gsimedia_img_annotation" android:layout_below="@+id/gsimedia_img_bookmark"
+			android:layout_alignParentRight="true" android:src="@drawable/gsi_tab01" />
+		
+		<RelativeLayout
+		    android:orientation="vertical"
+		    android:background="@drawable/ian_paper01"
+		    android:layout_width="fill_parent"
+		    android:layout_below="@+id/RelativeLayout_Title" android:layout_height="wrap_content" android:id="@+id/relativeLayout_bookarea">
+			<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/frameLayout">
+				<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" >
+					
+					<ScrollView android:id="@+id/scrollView_Text" android:layout_width="fill_parent"  android:layout_height="fill_parent" android:layout_below="@+id/mereader_chapter_name"> 
+						<LinearLayout  android:orientation="vertical" android:layout_width="fill_parent"  android:layout_height="fill_parent" android:visibility="gone">
+							<EditText android:scrollbars="vertical" android:layout_weight="1" android:layout_width="fill_parent" android:id="@+id/mereader_org_area" android:background="@null" android:editable="false" android:paddingLeft="20dip" android:layout_height="wrap_content" android:paddingBottom="2dip" android:textColor="#ff000000" android:layout_below="@+id/mereader_chapter_name" android:gravity="top|left" android:cursorVisible="false" android:paddingRight="20dip"></EditText>
+						</LinearLayout>
+					</ScrollView>
+					<tw.com.soyong.utility.ImageTextView android:background="@null" android:id="@+id/mereader_pic_area" android:layout_width="fill_parent" android:layout_height="fill_parent" android:visibility="gone"></tw.com.soyong.utility.ImageTextView>
+				<ScrollView  android:id="@+id/scrollView_content"  android:layout_width="fill_parent"   android:layout_height="fill_parent">  
+					<RelativeLayout android:id="@+id/RelativeLayout_ImageText" android:layout_width="fill_parent" android:layout_height="fill_parent" >
+						<TextView android:layout_width="fill_parent" android:text="Chapter name" android:textAppearance="?android:attr/textAppearanceMedium" android:paddingRight="20dip" android:paddingBottom="2dip" android:layout_height="wrap_content" android:paddingLeft="20dip" android:singleLine="true" android:id="@+id/mereader_chapter_name" android:background="@null" android:ellipsize="marquee" android:textColor="#ffaa8296"></TextView>
+						<ImageView android:layout_below="@+id/mereader_chapter_name" android:layout_height="wrap_content" android:id="@+id/imageView_pic" android:layout_width="wrap_content" android:layout_centerHorizontal="false" android:layout_marginTop="1dip"></ImageView>
+						<TextView  android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/textView_Spanned" android:layout_below="@+id/imageView_pic" android:layout_centerHorizontal="true" android:layout_alignParentBottom="true" android:textColor="#ff000000" android:paddingLeft="20dip" android:paddingRight="20dip" android:scrollbars="vertical" android:gravity="top" android:paddingBottom="10dip" android:paddingTop="10dip"></TextView>
+						<ImageView 	android:layout_width="wrap_content"	android:layout_height="wrap_content"  android:layout_alignParentRight="true" android:background="@drawable/folding_right" android:id="@+id/bookmarkIcon" android:visibility="invisible"/> 
+					<ImageView android:layout_width="wrap_content"	android:layout_height="wrap_content" android:id="@+id/gsimedia_img_bookmark_right" 	android:layout_alignParentRight="true" android:clickable="true" android:src="@drawable/folding" android:visibility="visible"/>
+				
+			<ImageView 	android:id="@+id/posAIcon" android:layout_alignParentRight="true" android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@null"
+				android:visibility="invisible"
+				android:src="@drawable/key_pos_a" android:layout_below="@+id/gsimedia_img_bookmark_right"/> 
+				
+			<ImageView 
+				android:id="@+id/posBIcon"
+				android:layout_alignParentRight="true"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@null"
+				android:visibility="invisible"
+				android:src="@drawable/key_pos_b" android:layout_below="@+id/posAIcon"/> 								
+				
+					</RelativeLayout>
+				</ScrollView>
+				</RelativeLayout>
+				
+				
+				
+				
+			</FrameLayout>
+	    
+			
+	    </RelativeLayout>	
+			
+	</RelativeLayout>
+	<!-- control panel -->
+	<RelativeLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/RelativeLayout_Ctls"
+		android:layout_alignParentBottom="true" android:visibility="visible">
+    
+		    <RelativeLayout
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/gsi_br05"
+		    android:id="@+id/RelativeLayout_SeekBar" 
+		   	android:layout_alignParentBottom="true" android:layout_width="fill_parent">
+		    
+		    	<!-- play/pause button  -->
+				<ImageButton 
+			    	android:id="@+id/playRangeBtn"
+			    	android:layout_alignParentRight = "true"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+	  				android:background="@drawable/key_playrang_btn"
+	  				android:layout_marginRight="10dip"
+	  				android:paddingTop="8dip"
+	  				android:layout_marginTop="2dip"/>
+	  			
+	  			
+	  			<!-- play/pause button  -->
+				<ImageButton 
+			    	android:id="@+id/playBtn"
+			    	android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+	  				android:background="@drawable/key_play_btn"
+	  				android:layout_toLeftOf="@+id/playRangeBtn"
+	  				android:layout_marginRight="10dip"
+	  				android:layout_marginTop="2dip"/>
+  			
+  				
+  				
+<LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="horizontal" android:layout_toLeftOf="@+id/playBtn" android:background="@drawable/gsi_br05_transpa">		
+  			<include android:layout_width="wrap_content" android:layout_alignParentLeft="true" android:layout_toLeftOf="@+id/playBtn" layout="@layout/gsi_mereader_progress_group" android:layout_height="wrap_content" android:layout_alignTop="@+id/RelativeLayout_SeekBar" android:layout_alignBottom="@+id/RelativeLayout_SeekBar"/>			    
+	
+</LinearLayout>
+			</RelativeLayout>
+		
+		<RelativeLayout android:id="@+id/ctls" android:layout_above="@+id/RelativeLayout_SeekBar" 
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:background="@drawable/gsi_br03" android:gravity="center_horizontal">
+			<HorizontalScrollView android:layout_width="wrap_content" android:id="@+id/function_panel"
+				android:layout_height="wrap_content" android:scrollbars="none">
+				<RelativeLayout android:layout_width="wrap_content"
+					android:id="@+id/ctl" android:layout_height="wrap_content">
+					
+					<Button android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_help"
+						android:background="@drawable/gsi_button19_btn"/>
+					
+					<Button android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_repBtn"
+						android:layout_toRightOf="@+id/gsimedia_btn_help" 
+						android:background="@drawable/key_repeatoff_btn"/>
+						
+					<Button android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_setPosBtn"
+						android:layout_toRightOf="@+id/gsimedia_btn_repBtn"
+						android:background="@drawable/key_seta_btn"/>
+
+					<Button android:id="@+id/gsimedia_btn_fontSizeBtn"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_toRightOf="@+id/gsimedia_btn_setPosBtn"
+						android:background="@drawable/gsi_button36_btn"/>
+						
+						
+					<Button android:id="@+id/gsimedia_btn_orgBtn"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_toRightOf="@+id/gsimedia_btn_fontSizeBtn"
+						android:background="@drawable/key_orgtext_btn"/>
+						
+					<Button android:id="@+id/gsimedia_btn_trlBtn"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_toRightOf="@+id/gsimedia_btn_orgBtn"
+						android:background="@drawable/key_trltext_btn"/>
+
+					<Button android:id="@+id/gsimedia_btn_picBtn"		
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_toRightOf="@+id/gsimedia_btn_trlBtn"
+						android:background="@drawable/key_picture_btn"/>
+
+					<Button android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_searchBtn"
+						android:layout_toRightOf="@+id/gsimedia_btn_picBtn"
+						android:background="@drawable/key_search_btn"/>
+
+					<Button android:id="@+id/gsimedia_btn_recBtn"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_toRightOf="@+id/gsimedia_btn_searchBtn"
+						android:background="@drawable/key_record_btn"/>
+						
+					<Button android:id="@+id/gsimedia_btn_extBtn"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_toRightOf="@+id/gsimedia_btn_recBtn"
+						android:background="@drawable/key_ext_btn"/>
+
+					<Button android:id="@+id/gsimedia_btn_settingBtn"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_toRightOf="@+id/gsimedia_btn_extBtn"
+						android:background="@drawable/gsi_button30_btn"/>
+					
+					<Button android:id="@+id/gsimedia_btn_endline"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"
+						android:layout_toRightOf="@+id/gsimedia_btn_settingBtn"
+						android:background="@drawable/gsi_button_endline"/>
+								
+				</RelativeLayout>
+			</HorizontalScrollView>
+		</RelativeLayout>
+	
+		<RelativeLayout android:id="@+id/ctls_color" android:layout_above="@+id/ctls" 
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:background="@drawable/gsi_br04" android:gravity="center_horizontal" android:visibility="invisible">
+									<LinearLayout android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="horizontal" android:background="@drawable/gsi_br04">		
+				<RelativeLayout android:id="@+id/ctl_color" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="25dip" android:paddingRight="25dip" android:layout_gravity="center_vertical">
+
+									
+</RelativeLayout>
+			</LinearLayout>
+		</RelativeLayout>
+	
+	
+	</RelativeLayout>
+
+		<!--  Recording panel -->
+	<LinearLayout
+		android:id="@+id/record_panel"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content" android:layout_gravity="bottom" android:visibility="gone">
+    	    	
+    	<TextView  
+			android:id="@+id/record_prompt"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content"
+		    android:textStyle="bold"
+		    android:gravity="center"
+		    android:text="@string/record_message_1"
+		    android:textAppearance="?android:attr/textAppearanceMedium"/>
+		    
+		<LinearLayout
+		    android:orientation="horizontal"
+		    android:gravity="bottom"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent" android:visibility="visible">
+
+			<tw.com.soyong.utility.ImageOnlyButton 
+				android:id="@+id/rec_recording"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@null"
+				android:src="@drawable/rec_2a"
+			    pj:resourceNotFocused="@drawable/rec_2a"
+		        pj:resourceFocused="@drawable/rec_2a"
+		        pj:resourcePressed="@drawable/rec_2b"/>
+		    
+		    <tw.com.soyong.utility.ImageOnlyButton
+				android:id="@+id/rec_play"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@null"
+				android:src="@drawable/rec_1a"
+		        pj:resourceNotFocused="@drawable/rec_1a"
+		        pj:resourceFocused="@drawable/rec_1a"
+		        pj:resourcePressed="@drawable/rec_1b"/>
+		                 
+			<tw.com.soyong.utility.ImageOnlyButton 
+				android:id="@+id/rec_stop"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:background="@null"
+				android:src="@drawable/rec_3a"
+		        pj:resourceNotFocused="@drawable/rec_3a"
+		        pj:resourceFocused="@drawable/rec_3a"
+		        pj:resourcePressed="@drawable/rec_3b"/>
+		    
+		        				
+    	</LinearLayout>
+    </LinearLayout>
+
+	<!-- info display -->
+</merge>

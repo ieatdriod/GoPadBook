@@ -1,25 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.padbook"
-    android:versionCode="1"
-    android:versionName="1.0" >
+	package="com.taiwanmobile.myBook_PAD" android:versionCode="1"
+	android:versionName="1.3.0">
+	<application android:icon="@drawable/iii_icon"
+		android:label="@string/iii_app_name" 
+		android:debuggable="true"
+		android:theme="@android:style/Theme.NoTitleBar"> 
+		
 
-    <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="15" />
+		<!-- iii -->
+		<activity android:name=".RealBookcase"
+			android:screenOrientation="portrait" android:alwaysRetainTaskState="true" android:configChanges="orientation">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="twmebook" />
+			</intent-filter>
+		</activity>
 
-    <application
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+		<activity android:name=".Reader" android:configChanges="orientation|keyboardHidden">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:host="*" android:scheme="epub" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".LastPageActivity"
+			android:screenOrientation="portrait">
+		</activity>
+		<activity android:name="Setting" android:screenOrientation="portrait"></activity>
+		<activity android:name="SearchBook"
+			android:screenOrientation="portrait"></activity>
+		<activity android:name="ReaderSetting"
+			android:screenOrientation="portrait"></activity>
+		<activity android:name="TWMWebView"
+			android:screenOrientation="portrait"></activity>
+		<activity android:name="ReaderCatalogJump"
+			android:screenOrientation="portrait"></activity>
+		<activity android:name="ReaderSearch"
+			android:screenOrientation="portrait"></activity>
+		<activity android:name="SettingNotes"
+			android:screenOrientation="portrait"></activity>
+		<activity android:name="OnlineBook"
+			android:screenOrientation="portrait" android:alwaysRetainTaskState="true"></activity>			
+		<activity android:name="TWMBook"
+			android:screenOrientation="portrait" android:alwaysRetainTaskState="true" android:configChanges="orientation"></activity>			
+			
+			
+		<!-- GSI PDF -->
+		<activity android:configChanges="orientation|keyboardHidden"
+			android:theme="@style/Theme.Viewer" 
+			android:name="com.gsimedia.gsiebook.RendererActivity"
+			android:process=":gsiebookpdfreader"
+			android:label="eBookRenderer">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW"></action>
+				<category android:name="android.intent.category.DEFAULT"></category>
+				<category android:name="android.intent.category.BROWSABLE"></category>
+				<data android:host="*" android:scheme="pdf" />
+			</intent-filter>
+		</activity>	
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
+			<activity android:theme="@style/Theme.Viewer"
+				android:screenOrientation="portrait" android:name="com.gsimedia.gsiebook.DetailActivity"></activity>
+			<activity android:theme="@style/Theme.Viewer"
+				android:screenOrientation="portrait" android:name="com.gsimedia.gsiebook.AnnotationActivity"></activity>
+			<activity android:theme="@style/Theme.Viewer"
+				android:screenOrientation="portrait" android:name="com.gsimedia.gsiebook.SettingActivity" ></activity>
 
-</manifest>
+<activity android:theme="@style/Theme.Viewer" android:name="com.gsimedia.gsiebook.FindResultActivity" 
+				android:process=":gsiebookpdfreader" android:screenOrientation="portrait"></activity>
+		
+
+		<!-- MeReader -->
+		<activity android:name="AboutActivity"
+			android:screenOrientation="portrait"></activity>
+		<!--
+			<activity android:name="tw.com.soyong.AnReader"
+			android:label="@string/app_name"
+			android:screenOrientation="portrait"> <intent-filter> <action
+			android:name="android.intent.action.MAIN" /> <category
+			android:name="android.intent.category.LAUNCHER" /> </intent-filter>
+			</activity>
+		-->
+
+
+		<activity android:name="tw.com.soyong.AnReader"
+			android:label="@string/iii_app_name" android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:host="*" android:scheme="mebook" />
+			</intent-filter>
+		</activity>
+
+		<activity android:name="tw.com.soyong.MeReaderActivity"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+		</activity>
+
+		<activity android:name="tw.com.soyong.ChapterListActivity"
+			android:screenOrientation="portrait" android:label="@string/chapter_list_title"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+		</activity>
+
+		<activity android:name="tw.com.soyong.ExtendActivity"
+			android:screenOrientation="portrait" android:label="@string/extend_title"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+		</activity>
+
+		<activity android:name="tw.com.soyong.PostscriptActivity"
+			android:screenOrientation="portrait" android:label="@string/ps_title"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+		</activity>
+
+		<activity android:name="tw.com.soyong.SearchActivity"
+			android:screenOrientation="portrait" android:label="@string/search_title"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+		</activity>
+
+		<activity android:name="tw.com.soyong.MebookInfoActivity"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+		</activity>
+
+		<!-- android:windowSoftInputMode="stateVisible|adjustResize" -->
+
+		<activity android:name="tw.com.soyong.SettingActivity"
+			android:screenOrientation="portrait" android:label="@string/setting_title"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+		</activity>
+
+		<activity android:name="tw.com.soyong.OperatorHelpActivity"
+			android:screenOrientation="portrait" android:theme="@style/Theme.Transparent">
+		</activity>
+
+
+		<activity android:name="tw.com.soyong.LastPageActivity"
+			android:screenOrientation="portrait"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+		</activity>
+
+
+            
+		<!-- Service -->
+		<service android:name="tw.com.soyong.PlayerService"
+			android:process=":remote">
+			<intent-filter>
+				<action android:name="tw.com.soyong.IPlayerService" />
+				<action android:name="tw.com.soyong.IPlayerServiceCallback" />
+			</intent-filter>
+		</service>
+
+		<service android:enabled="true" android:name="tw.com.soyong.LocalService" />
+
+	</application>
+
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> 
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.INSTALL_PACKAGES" />
+	<!--
+		<supports-screens android:largeScreens="true"></supports-screens>
+	-->
+	<uses-sdk android:minSdkVersion="8" />
+
+	<supports-screens 
+	    android:xlargeScreens="true" 
+	    android:largeScreens="true"
+		android:normalScreens="true" 
+		android:smallScreens="true" 
+		android:anyDensity="true" />
+</manifest> 

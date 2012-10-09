@@ -1,0 +1,180 @@
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="128dip"
+	android:orientation="horizontal"  android:id="@+id/rowView"
+	android:paddingLeft="14dip" android:paddingRight="14dip" android:paddingTop="5dip" android:paddingBottom="12dip"
+	android:background="@drawable/bg01">
+	<include android:id="@+id/bookInfo1" layout="@layout/bookinfo" />
+	<include android:id="@+id/bookInfo2" layout="@layout/bookinfo" />
+	<include android:id="@+id/bookInfo3" layout="@layout/bookinfo" />
+	<include android:id="@+id/bookInfo4" layout="@layout/bookinfo" />
+	<include android:id="@+id/bookInfo5" layout="@layout/bookinfo" />
+<!-- 
+	<RelativeLayout android:id="@+id/bookInfo1"
+		android:layout_width="fill_parent" android:layout_weight="1" android:layout_height="wrap_content">
+
+		<ImageView android:id="@+id/cover" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:scaleType="fitEnd"
+			android:src="@drawable/mask" android:maxHeight="125dip"
+			android:minHeight="50dip" android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" android:layout_margin="1dip" 
+			/>
+
+		<ImageView android:id="@+id/type" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:scaleType="fitXY"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" 
+			/>
+
+		<ImageView android:id="@+id/deleteIcon" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:scaleType="fitXY"
+			android:background="@drawable/del_icon" android:visibility="invisible"/>
+
+
+		<ProgressBar android:id="@+id/progress"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="fill_parent" android:layout_height="12dip"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" android:layout_margin="5dip"
+			android:layout_marginBottom="10dip" android:max="100"
+			android:visibility="invisible" />
+
+	</RelativeLayout>
+	
+	<RelativeLayout android:id="@+id/bookInfo2"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1">
+
+		<ImageView android:id="@+id/cover" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:scaleType="fitEnd"
+			android:src="@drawable/mask" android:maxHeight="125dip"
+			android:minHeight="50dip" android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" android:layout_margin="1dip" 
+			/>
+
+		<ImageView android:id="@+id/type" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:scaleType="fitXY"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" 
+			/>
+
+		<ImageView android:id="@+id/deleteIcon" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:scaleType="fitXY"
+			android:background="@drawable/del_icon" android:visibility="invisible"/>
+
+
+		<ProgressBar android:id="@+id/progress"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="fill_parent" android:layout_height="12dip"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" android:layout_margin="5dip"
+			android:layout_marginBottom="10dip" android:max="100"
+			android:visibility="invisible" />
+
+	</RelativeLayout>	
+		
+		
+	<RelativeLayout android:id="@+id/bookInfo3"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1">
+
+		<ImageView android:id="@+id/cover" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:scaleType="fitEnd"
+			android:src="@drawable/mask" android:maxHeight="125dip"
+			android:minHeight="50dip" android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" android:layout_margin="1dip" 
+			/>
+
+		<ImageView android:id="@+id/type" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:scaleType="fitXY"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" 
+			/>
+
+		<ImageView android:id="@+id/deleteIcon" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:scaleType="fitXY"
+			android:background="@drawable/del_icon" android:visibility="invisible"/>
+
+
+		<ProgressBar android:id="@+id/progress"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="fill_parent" android:layout_height="12dip"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" android:layout_margin="5dip"
+			android:layout_marginBottom="10dip" android:max="100"
+			android:visibility="invisible" />
+
+	</RelativeLayout>		
+
+	<RelativeLayout android:id="@+id/bookInfo4"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1">
+
+		<ImageView android:id="@+id/cover" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:scaleType="fitEnd"
+			android:src="@drawable/mask" android:maxHeight="125dip"
+			android:minHeight="50dip" android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" android:layout_margin="1dip" 
+			/>
+
+		<ImageView android:id="@+id/type" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:scaleType="fitXY"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" 
+			/>
+
+		<ImageView android:id="@+id/deleteIcon" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:scaleType="fitXY"
+			android:background="@drawable/del_icon" android:visibility="invisible"/>
+
+
+		<ProgressBar android:id="@+id/progress"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="fill_parent" android:layout_height="12dip"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" android:layout_margin="5dip"
+			android:layout_marginBottom="10dip" android:max="100"
+			android:visibility="invisible" />
+
+	</RelativeLayout>
+	
+	<RelativeLayout android:id="@+id/bookInfo5"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1">
+
+		<ImageView android:id="@+id/cover" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" 
+			android:scaleType="fitEnd"
+			android:src="@drawable/mask" android:maxHeight="125dip"
+			android:minHeight="50dip" android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" android:layout_margin="1dip" 
+			/>
+
+		<ImageView android:id="@+id/type" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:scaleType="fitXY"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" 
+			/>
+
+		<ImageView android:id="@+id/deleteIcon" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:scaleType="fitXY"
+			android:background="@drawable/del_icon" android:visibility="invisible"/>
+
+
+		<ProgressBar android:id="@+id/progress"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_width="fill_parent" android:layout_height="12dip"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true" android:layout_margin="5dip"
+			android:layout_marginBottom="10dip" android:max="100"
+			android:visibility="invisible" />
+
+	</RelativeLayout>	
+	
+	-->
+</LinearLayout>

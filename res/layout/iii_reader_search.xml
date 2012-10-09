@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="#FFFFFF">
+    
+    <!-- top panel -->
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/RelativeLayout_Title">
+
+		<ImageButton android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:id="@+id/TopBG" android:background="@drawable/gsi_br08"></ImageButton>
+
+
+		<ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:background="@drawable/gsi_button01_btn" android:id="@+id/ib_reader_search_back">
+		</ImageButton>
+
+		<RelativeLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/RelativeLayout_Catalog" android:layout_toRightOf="@+id/ib_reader_search_back">
+
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:id="@+id/ex_ImageButton_bg" android:background="@drawable/gsi_title_bg03"/>
+
+			<ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:id="@+id/ex_ImageButton" android:background="@drawable/gsi_title13"></ImageButton>
+		</RelativeLayout>
+
+	</RelativeLayout>
+	<!-- end top panel -->
+    
+    <!-- search panel -->
+    <RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/RelativeLayout_Title"
+		android:id="@+id/RelativeLayout_SearchGroup">
+		
+		<RelativeLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/magnifier_bg"
+			android:layout_alignParentRight="true"
+			android:id="@+id/RelativeLayout_Searchbutton">
+			
+			<ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:background="@drawable/magnifier" android:id="@+id/btnSearchBegin">
+			</ImageButton>
+			
+		</RelativeLayout>
+			
+		<RelativeLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@drawable/searchkey_bg"
+			android:id="@+id/RelativeLayout_SearchKey" android:layout_toLeftOf="@+id/RelativeLayout_Searchbutton">
+			
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/searchkey_space_left"
+				android:id="@+id/ImageView_searchkey_space_left">
+			</ImageView>
+			
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/searchkey_space_right"
+				android:id="@+id/ImageView_searchkey_space_right"
+				android:layout_alignParentRight="true">
+			</ImageView>
+			
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/searchkey_left"
+				android:id="@+id/ImageView_searchkey_left"
+				android:layout_toRightOf="@+id/ImageView_searchkey_space_left">
+			</ImageView>
+			
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:background="@drawable/searchkey_right"
+				android:id="@+id/ImageView_searchkey_right"
+				android:layout_toLeftOf="@+id/ImageView_searchkey_space_right">
+			</ImageView>
+			
+			<EditText
+				android:layout_weight="1"
+			    android:singleLine="true" 
+			    android:imeOptions="actionSearch"
+
+			    android:hint="@string/GSI_SEARCH_HINT" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_toLeftOf="@+id/ImageView_searchkey_right" android:layout_toRightOf="@+id/ImageView_searchkey_left" android:background="@drawable/searchkey_center" android:id="@+id/et_reader_search_text_input">
+			 </EditText>
+			 
+			
+		</RelativeLayout>
+		
+		
+	</RelativeLayout>
+    <!-- end search panel -->
+	
+			<ProgressBar
+			android:id="@+id/progress_bar"
+			style="?android:attr/progressBarStyleHorizontal"
+			android:layout_gravity="center"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:visibility="gone"
+			android:layout_below="@+id/RelativeLayout_SearchGroup">
+			</ProgressBar>
+ 
+
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@+id/RelativeLayout_SearchGroup">
+
+		<!--
+			The frame layout is here since we will be showing either the empty
+			view or the list view.
+		-->
+		<FrameLayout android:layout_width="fill_parent"
+			android:layout_height="0dip" android:layout_weight="1">
+			<!--
+				Here is the list. Since we are using a ListActivity, we have to call
+				it "@android:id/list" so ListActivity will find it
+			-->
+			<ListView android:id="@+id/lv_reader_search_result"
+				android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:drawSelectorOnTop="false" android:cacheColorHint="#00000000"
+				android:dividerHeight="1dip" android:divider="#352C0A" />
+
+			<!-- Here is the view to show if the list is emtpy -->
+			<TextView android:id="@+id/empty" android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="#554641" />
+
+		</FrameLayout>
+	</LinearLayout>
+</RelativeLayout>
+   
+

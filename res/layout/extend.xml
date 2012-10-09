@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:pj="http://schemas.android.com/apk/res/org.iii.twmbook"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<!-- top panel -->
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/RelativeLayout_Title">
+
+		<ImageButton android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:background="@drawable/gsi_br06" android:id="@+id/TopBG"></ImageButton>
+
+
+		<ImageButton android:id="@+id/ext_ImageButton_Back"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:background="@drawable/gsi_button01_btn">
+		</ImageButton>
+
+		<RelativeLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/RelativeLayout_Catalog"
+			android:layout_toRightOf="@+id/ext_ImageButton_Back">
+
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:background="@drawable/gsi_title_bg01" android:id="@+id/ex_ImageButton_bg"/>
+
+			<ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:background="@drawable/gsi_title12" android:id="@+id/ex_ImageButton"></ImageButton>
+		</RelativeLayout>
+
+	</RelativeLayout>
+	<!-- end top panel -->
+
+	<!-- content area -->
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_below="@+id/RelativeLayout_Title" android:background="#FFFFFF">
+
+
+		<ScrollView android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				android:orientation="vertical" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:paddingLeft="3dip"
+				android:paddingRight="3dip">
+
+				<LinearLayout android:orientation="vertical"
+					android:layout_width="fill_parent" android:layout_height="fill_parent"
+					android:layout_weight="1" android:id="@+id/spell_layout">
+
+					<ImageView android:layout_height="wrap_content"
+						android:background="@drawable/ian_tag05"
+						android:layout_marginLeft="10dip" android:layout_marginTop="20dip"
+						android:layout_width="wrap_content">
+					</ImageView>
+
+					<WebView android:id="@+id/spell_area" android:layout_width="fill_parent"
+						android:layout_height="wrap_content" android:text="拼音"
+						android:gravity="top|left" android:paddingBottom="3dip"
+						android:background="@null" android:layout_weight="1" />
+
+				</LinearLayout>
+
+
+				<LinearLayout android:orientation="vertical"
+					android:layout_width="fill_parent" android:layout_height="fill_parent"
+					android:layout_weight="1" android:id="@+id/voc_layout">
+
+					<ImageView android:layout_height="wrap_content"
+						android:background="@drawable/ian_tag01"
+						android:layout_marginLeft="10dip" android:layout_marginTop="20dip"
+						android:layout_width="wrap_content">
+					</ImageView>
+
+					<TextView android:text="單字" android:id="@+id/voc_area"
+						android:layout_height="wrap_content" android:layout_width="fill_parent"
+						android:layout_marginLeft="16dip" android:layout_marginTop="20dip"
+						android:layout_marginRight="16dip" android:textColor="#282828" />
+
+					<Button android:id="@+id/btn_voc_play" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:text="@string/extend_voc_play"
+						android:visibility="gone" />
+				</LinearLayout>
+
+				<LinearLayout android:orientation="vertical"
+					android:layout_width="fill_parent" android:layout_height="fill_parent"
+					android:layout_weight="1" android:id="@+id/syn_layout">
+
+					<ImageView android:layout_height="wrap_content"
+						android:background="@drawable/ian_tag02"
+						android:layout_marginLeft="10dip" android:layout_marginTop="20dip"
+						android:layout_width="wrap_content">
+					</ImageView>
+
+					<TextView android:id="@+id/syn_area" android:layout_width="fill_parent"
+						android:layout_height="wrap_content" android:text="同義"
+						android:layout_marginLeft="16dip" android:layout_marginTop="20dip"
+						android:layout_marginRight="16dip" android:textColor="#282828" />
+				</LinearLayout>
+
+				<LinearLayout android:orientation="vertical"
+					android:layout_width="fill_parent" android:layout_height="fill_parent"
+					android:layout_weight="1" android:id="@+id/ant_layout">
+
+					<ImageView android:layout_height="wrap_content"
+						android:background="@drawable/ian_tag03"
+						android:layout_marginLeft="10dip" android:layout_marginTop="20dip"
+						android:layout_width="wrap_content">
+					</ImageView>
+
+					<TextView android:text="反義" android:id="@+id/ant_area"
+						android:layout_height="wrap_content" android:layout_width="fill_parent"
+						android:layout_marginLeft="16dip" android:layout_marginTop="20dip"
+						android:layout_marginRight="16dip" android:textColor="#282828" />
+
+				</LinearLayout>
+
+				<LinearLayout android:orientation="vertical"
+					android:layout_width="fill_parent" android:layout_height="fill_parent"
+					android:layout_weight="1" android:id="@+id/ext_layout">
+
+					<ImageView android:layout_height="wrap_content"
+						android:background="@drawable/ian_tag04"
+						android:layout_marginLeft="10dip" android:layout_marginTop="20dip"
+						android:layout_width="wrap_content">
+					</ImageView>
+
+					<TextView android:text="延伸" android:id="@+id/ext_area"
+						android:layout_height="wrap_content" android:layout_width="fill_parent"
+						android:layout_marginLeft="16dip" android:layout_marginTop="20dip"
+						android:layout_marginRight="16dip" android:textColor="#282828" />
+				</LinearLayout>
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+	<!-- end content area -->
+</RelativeLayout>
+   
+   
+

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:shelves="http://schemas.android.com/apk/res/com.gsimedia.gsiebook"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+	<!-- title bar -->
+	<RelativeLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/RelativeLayout_Title"
+		android:layout_gravity="top|center_horizontal">
+		<ImageView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_alignParentTop="true" android:background="@drawable/gsi_br06"/>
+		<Button android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_title_left"
+			android:layout_alignParentLeft="true" android:clickable="true" android:background="@drawable/gsi_button01_btn"/>
+		<Button android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_title_right"
+			android:layout_alignParentRight="true" android:background="@drawable/gsi_button03_btn"/>
+		<ImageView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_toRightOf="@id/gsimedia_btn_title_left"
+			android:id="@+id/gsimedia_title_bg" android:background="@drawable/gsi_title_bg01"/>
+		<ImageView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_toRightOf="@id/gsimedia_btn_title_left"
+			android:id="@+id/gsimedia_title" />				
+	</RelativeLayout>
+
+	<!-- control buttons -->
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:id="@+id/RelativeLayout_Ctls"
+		android:background="@drawable/gsi_br03"
+		android:layout_alignParentBottom="true" android:gravity="center_horizontal">
+		
+		<HorizontalScrollView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:scrollbars="none">
+			<RelativeLayout android:layout_width="wrap_content"
+				android:id="@+id/ctl" android:layout_height="wrap_content">	
+		
+				<Button android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:background="@drawable/gsi_button10_btn"
+					android:id="@+id/gsimedia_btn_toc" android:layout_alignParentLeft="true"
+					android:clickable="true" />
+				<Button android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:background="@drawable/gsi_button11_btn"
+					android:id="@+id/gsimedia_btn_bookmark" android:layout_toRightOf="@id/gsimedia_btn_toc"
+					android:clickable="true" />
+				<Button android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_marker"
+								android:layout_toRightOf="@id/gsimedia_btn_bookmark"
+					android:clickable="true" android:background="@drawable/gsi_button12_btn" />
+					
+				<Button android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_annotation"
+					android:layout_toRightOf="@id/gsimedia_btn_marker" android:clickable="true"
+					android:background="@drawable/gsi_button13_btn" />
+				<Button android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_info"
+					android:layout_toRightOf="@id/gsimedia_btn_annotation"
+					android:clickable="true" android:background="@drawable/gsi_button14_btn" />
+			</RelativeLayout>
+		</HorizontalScrollView>
+	</RelativeLayout>
+	
+	<!-- Listview -->
+	<ListView android:id="@+id/android_list" android:orientation="vertical"
+		android:layout_height="wrap_content" android:layout_width="fill_parent"
+		android:isScrollContainer="true" android:layout_below="@id/RelativeLayout_Title"
+		android:layout_above="@id/RelativeLayout_Ctls" android:choiceMode="multipleChoice"
+		android:fastScrollEnabled="true" android:background="#FFFFFF"
+		android:scrollingCache="false" android:scrollbarStyle="insideOverlay"
+		android:fadingEdge="none" />
+
+	<!-- empty view of list view -->
+	<TextView android:id="@+id/android:empty"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:text="empty" android:layout_below="@id/RelativeLayout_Title"
+		android:gravity="center_horizontal"
+		android:layout_above="@id/RelativeLayout_Ctls" 
+		android:background="#FFFFFF" android:textSize="18dip"
+		android:textColor="@android:color/black" />
+
+	<!-- book info page -->
+	<RelativeLayout android:id="@+id/bookinfo"
+		android:visibility="invisible" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:layout_below="@id/RelativeLayout_Title"
+		android:layout_above="@id/RelativeLayout_Ctls" android:background="#FFFFFF">
+		<RelativeLayout android:layout_width="wrap_content" android:id="@+id/content"
+			android:layout_height="wrap_content" 
+			android:padding="40dip">
+			<ImageView android:id="@+id/cover" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_alignParentTop="true" android:background="#000000"/>
+			<TextView android:id="@+id/type" android:hint="類別"
+				android:paddingTop="20dip"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:textColor="@android:color/black"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/cover" />
+			<TextView android:id="@+id/title" android:hint="書名"
+				android:paddingTop="20dip"
+				android:textColor="@android:color/black"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/type" />
+			<TextView android:id="@+id/publishertxt" android:text="出版社:"
+				android:paddingTop="20dip"
+				android:textColor="@android:color/black"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/title" />
+			<TextView android:id="@+id/publisher" android:hint="出版社"
+				android:paddingTop="20dip"
+				android:textColor="@android:color/black"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/title" android:layout_toRightOf="@id/publishertxt" />
+			<TextView android:id="@+id/authortxt" android:text="作者:"
+				android:paddingTop="20dip"
+				android:textColor="@android:color/black"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/publishertxt" />
+			<TextView android:id="@+id/author" android:hint="作者"
+				android:paddingTop="20dip"
+				android:textColor="@android:color/black"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/publishertxt" android:layout_toRightOf="@id/authortxt" />
+		</RelativeLayout>
+		<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+			android:layout_below="@id/content" android:gravity="center" android:background="#FFFFFF">
+			<Button android:id="@+id/more" android:background="@drawable/gsi_more01_btn"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"/> 
+		</RelativeLayout>
+	</RelativeLayout>
+
+</RelativeLayout>

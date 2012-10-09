@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content">
+	<TextView android:id="@android:id/text1" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge"
+		android:gravity="center_vertical" android:paddingLeft="6dip"
+		android:singleLine="true" android:ellipsize="marquee"
+		 android:textColor="#282828"
+		android:minHeight="?android:attr/listPreferredItemHeight" />
+	<ImageView android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/ChapterList_ItemImage"
+		android:layout_alignParentRight="true" android:layout_marginRight="8dip">
+	</ImageView>
+</RelativeLayout>

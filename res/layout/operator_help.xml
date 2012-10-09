@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:id="@+id/help_layout">
+
+	<RelativeLayout android:layout_height="fill_parent" android:layout_width="fill_parent">
+		<ImageView android:layout_height="fill_parent" android:background="@drawable/gsi_help_bg" android:layout_width="fill_parent" android:scaleType="fitXY"></ImageView>
+		<ImageView android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_width="wrap_content" android:background="@drawable/gsi_help_button_folding" android:id="@+id/imageView_fold" android:layout_alignParentTop="true" android:layout_alignParentRight="true" android:layout_marginRight="15dip" android:layout_marginTop="15dip"></ImageView>
+
+		<LinearLayout android:id="@+id/Help_left"
+			android:layout_alignParentLeft="true" android:layout_height="fill_parent" android:layout_width="wrap_content">
+			<ImageView android:layout_height="wrap_content" android:scaleType="fitXY" android:background="@drawable/gsi_help_mereader_previous" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_marginLeft="15dip"></ImageView>
+			
+		</LinearLayout>
+
+		<LinearLayout android:id="@+id/Help_right"
+			android:layout_width="wrap_content" android:layout_alignParentRight="true" android:layout_height="fill_parent">
+			<ImageView android:layout_height="wrap_content" android:scaleType="fitXY" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:background="@drawable/gsi_help_mereader_next" android:layout_marginRight="15dip"></ImageView>
+
+		</LinearLayout>
+
+		<LinearLayout android:id="@+id/Help_center"
+			android:layout_height="fill_parent" android:layout_width="fill_parent">
+			<LinearLayout android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_width="fill_parent" android:orientation="vertical">
+				<ImageView android:id="@+id/ImageView01" android:layout_height="wrap_content" android:scaleType="fitXY" android:background="@drawable/gsi_help_button_center" android:layout_gravity="center_horizontal" android:layout_width="wrap_content"></ImageView>
+			</LinearLayout>
+
+		</LinearLayout>
+
+	</RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:pj="http://schemas.android.com/apk/res/org.iii.twmbook"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+			<!-- top panel -->
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/RelativeLayout_Title">
+
+		<ImageButton android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:background="@drawable/gsi_br06" android:id="@+id/TopBG"></ImageButton>
+
+
+		<ImageButton android:id="@+id/ps_ImageButton_Back"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:background="@drawable/gsi_button01_btn">
+		</ImageButton>
+
+		<RelativeLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/RelativeLayout_Catalog"
+			android:layout_toRightOf="@+id/ps_ImageButton_Back">
+
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:background="@drawable/gsi_title_bg01" android:id="@+id/ps_ImageButton_bg"/>
+
+			<ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:background="@drawable/gsi_title11" android:id="@+id/ps_ImageButton"></ImageButton>
+		</RelativeLayout>
+
+	</RelativeLayout>
+	<!-- end top panel -->
+
+	<!-- content area -->
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_below="@+id/RelativeLayout_Title" android:background="#FFFFFF">
+
+
+		<ScrollView android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			<LinearLayout android:orientation="vertical"
+				android:layout_width="fill_parent" android:layout_height="fill_parent">
+				<EditText android:id="@+id/ps_area" android:layout_width="fill_parent"
+					android:layout_height="fill_parent" android:editable="false"
+					android:cursorVisible="false" android:text="附錄" android:gravity="top|left"
+					android:longClickable="false" android:background="#00000000"
+					android:layout_margin="16dip" />
+			</LinearLayout>
+		</ScrollView>
+	</LinearLayout>
+	<!-- end content area -->
+</RelativeLayout>
+   
+

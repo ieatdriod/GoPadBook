@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:stretchColumns="0"
+>
+	<View
+    	android:layout_height="1dip"
+    	android:background="#394D1B"/>   
+<RelativeLayout
+    android:id="@+id/ll_reader_setting_sub_list"
+    android:layout_width="fill_parent"
+    android:layout_height="55dip">
+ 	
+	<TextView 
+		android:id="@+id/name"
+		android:textSize="16dip"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#282828"
+        android:layout_marginLeft="16dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+
+	/>
+    <ImageView 
+    	android:id="@+id/img"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:layout_marginRight="16dip"       
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="#00000000"
+    />
+
+</RelativeLayout>
+	<View
+    	android:layout_height="1dip"
+    	android:background="#394D1B"/>   	
+</TableLayout>	

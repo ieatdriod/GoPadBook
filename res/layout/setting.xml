@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	
+			<!-- top panel -->
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/RelativeLayout_Title">
+
+		<ImageButton android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:background="@drawable/gsi_br06" android:id="@+id/TopBG"></ImageButton>
+
+
+		<ImageButton android:id="@+id/setting_ImageButton_Back"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:background="@drawable/gsi_button01_btn">
+		</ImageButton>
+
+		<RelativeLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/RelativeLayout_Catalog"
+			android:layout_toRightOf="@+id/setting_ImageButton_Back">
+
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:background="@drawable/gsi_title_bg01" android:id="@+id/setting_ImageButton_bg"/>
+
+			<ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:background="@drawable/gsi_title10" android:id="@+id/setting_ImageButton"></ImageButton>
+		</RelativeLayout>
+
+	</RelativeLayout>
+	<!-- end top panel -->
+	
+	<!-- content area -->
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_below="@+id/RelativeLayout_Title" android:background="#FFFFFF">
+		<LinearLayout android:orientation="vertical"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:background="@drawable/ani_pic02" android:visibility="gone">
+
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:lines="3"
+				android:scrollbars="none" android:text="@string/setting_content"
+				android:id="@+id/setting_TextView01" android:layout_marginBottom="10dip"
+				android:layout_marginTop="10dip" android:layout_marginLeft="25dip"
+				android:layout_marginRight="15dip">
+			</TextView>
+		</LinearLayout>
+	
+		<ScrollView android:layout_width="fill_parent"
+			android:layout_height="fill_parent">
+			<TableLayout android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:stretchColumns="0">
+
+				<!-- content area items -->
+				<TableRow>
+					<RelativeLayout android:layout_width="wrap_content"
+						android:layout_height="50dip">
+						<TextView android:text="@string/setting_repeat_count"
+							android:layout_alignParentLeft="true"
+							android:layout_centerVertical="true" android:layout_width="wrap_content"
+							android:layout_height="wrap_content" android:textColor="#282828"
+							android:layout_marginLeft="16dip" />
+						<Spinner android:id="@+id/spin_repeat_count"
+							android:layout_alignParentRight="true"
+							android:layout_centerVertical="true" android:layout_width="wrap_content"
+							android:layout_height="wrap_content" android:drawSelectorOnTop="true"
+							android:prompt="@string/setting_repeat_count"
+							android:layout_marginRight="16dip" />
+					</RelativeLayout>
+				</TableRow>
+
+				<View android:layout_height="1dip" android:background="#394D1B" />
+				<TableRow>
+					<RelativeLayout android:layout_width="wrap_content"
+						android:layout_height="50dip">
+						<TextView android:text="@string/setting_gap"
+							android:layout_alignParentLeft="true"
+							android:layout_centerVertical="true" android:layout_width="wrap_content"
+							android:layout_height="wrap_content" android:textColor="#282828"
+							android:layout_marginLeft="16dip" />
+						<Spinner android:id="@+id/spin_gap"
+							android:layout_alignParentRight="true"
+							android:layout_centerVertical="true" android:layout_width="wrap_content"
+							android:layout_height="wrap_content" android:drawSelectorOnTop="true"
+							android:prompt="@string/setting_gap" android:layout_marginRight="16dip" />
+					</RelativeLayout>
+				</TableRow>
+
+
+
+				<View android:id="@+id/hide_percent_line" android:layout_height="1dip" android:background="#394D1B" />
+				<TableRow>
+					<RelativeLayout
+						android:id="@+id/hide_percent_cell" 
+						android:layout_width="wrap_content"
+						android:layout_height="50dip">
+						<TextView android:text="@string/setting_hide_precnet"
+							android:layout_alignParentLeft="true"
+							android:layout_centerVertical="true" android:layout_width="wrap_content"
+							android:layout_height="wrap_content" android:textColor="#282828"
+							android:layout_marginLeft="16dip" />
+						<Spinner android:id="@+id/spin_hide_percent"
+							android:layout_alignParentRight="true"
+							android:layout_centerVertical="true" android:layout_width="wrap_content"
+							android:layout_height="wrap_content" android:drawSelectorOnTop="true"
+							android:prompt="@string/setting_hide_precnet"
+							android:layout_marginRight="16dip" />
+					</RelativeLayout>
+				</TableRow>
+
+				<View android:layout_height="1dip" android:background="#394D1B" />
+				<TableRow>
+					<RelativeLayout android:layout_width="wrap_content"
+						android:layout_height="50dip">
+					<TextView android:text="@string/setting_auto_repeat"
+						android:layout_alignParentLeft="true"
+						android:layout_centerVertical="true" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:textColor="#282828"
+						android:layout_marginLeft="16dip" />
+					<CheckBox android:id="@+id/check1"
+						android:layout_alignParentRight="true"
+						android:layout_centerVertical="true" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:layout_marginRight="16dip"/>
+						</RelativeLayout>
+				</TableRow>
+				<View android:layout_height="1dip" android:background="#394D1B" />
+				<TableRow>
+					<RelativeLayout android:layout_width="wrap_content"
+						android:layout_height="50dip">
+					<TextView android:text="@string/setting_reset"
+						android:layout_alignParentLeft="true"
+						android:layout_centerVertical="true" android:layout_width="wrap_content"
+						android:layout_height="wrap_content" android:textColor="#282828"
+						android:layout_marginLeft="16dip" />
+ 				    <Button 
+ 				    	android:layout_alignParentRight="true"
+				    	android:id="@+id/resetBtn"
+				    	android:text="@string/setting_reset_btn"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginRight="16dip"
+    					/>
+    					</RelativeLayout>
+				</TableRow>
+				<View android:layout_height="1dip" android:background="#394D1B" />
+				
+				
+				<!-- end content items -->
+			</TableLayout>
+		</ScrollView>
+
+	</LinearLayout>
+	<!-- end content area -->
+</RelativeLayout>
+
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<LinearLayout
+  		xmlns:android="http://schemas.android.com/apk/res/android"
+  		android:orientation="horizontal"
+  		android:layout_width="fill_parent"
+  		android:layout_height="fill_parent"
+	>
+	<SeekBar
+    	android:id="@+id/setting_seekBar"
+    	android:layout_width="250dip"
+    	android:layout_height="35dip"    	
+    	android:visibility="gone"
+    />	
+  	<TextView 
+  		android:id="@+id/tv_setting_itemName"
+    	android:layout_width="250dip"
+    	android:layout_height="45dip" 
+    	android:gravity="center_vertical"
+    	android:textColor="@drawable/iii_Black_1"
+  	/>
+  	<TextView 
+  		android:id="@+id/tv_setting_itemValue"
+    	android:layout_width="wrap_content"
+    	android:layout_height="45dip" 
+    	android:gravity="center_vertical"
+    	android:layout_alignParentRight="true"
+    	android:textColor="@drawable/iii_Black_1"
+  	/>  	
+  	<CheckBox android:id="@+id/cb_setting_itemValue"
+    	android:layout_width="50dip"
+    	android:layout_height="45dip"
+    	android:gravity="center_vertical"
+    	android:layout_alignParentRight="true"
+    	android:visibility="gone"
+  	/>	  	
+	</LinearLayout>

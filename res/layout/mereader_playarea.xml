@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="wrap_content" android:layout_height="wrap_content"
+	android:background="@drawable/gsi_br05_transpa" android:id="@+id/RelativeLayout_playarea">
+
+	<ImageButton android:id="@+id/playRangeBtn"
+		android:layout_alignParentRight="true" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:background="@drawable/key_playrang_btn"
+		android:layout_centerVertical="true" android:layout_marginRight="5dip" />
+
+	<ImageButton android:id="@+id/playBtn"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:background="@drawable/key_play_btn" android:layout_toLeftOf="@+id/playRangeBtn"
+		android:layout_centerVertical="true" android:paddingRight="5dip"
+		android:layout_marginRight="5dip" />
+</RelativeLayout>
+

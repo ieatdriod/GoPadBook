@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:padding="10dip">
+	<EditText android:hint="book id" android:id="@+id/book"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+	<EditText android:hint="title" android:id="@+id/title"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
+	<EditText android:hint="page" android:id="@+id/page"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:inputType="numberDecimal"></EditText>
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content">
+		<Button android:text="add" android:id="@+id/add"
+			android:layout_width="100dip" android:layout_height="wrap_content"></Button>
+		<Button android:text="delete" android:id="@+id/delete"
+			android:layout_width="100dip" android:layout_height="wrap_content"></Button>
+	</LinearLayout>
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content">
+		<Button android:text="display" android:id="@+id/display"
+			android:layout_width="100dip" android:layout_height="wrap_content"></Button>
+		<Button android:text="del all" android:id="@+id/delall"
+			android:layout_width="100dip" android:layout_height="wrap_content"></Button>
+	</LinearLayout>
+	<Button android:id="@+id/switcher" android:layout_width="100dip"
+		android:layout_height="wrap_content"></Button>
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="wrap_content">
+		<Button android:text="set last" android:id="@+id/setlast"
+			android:layout_width="100dip" android:layout_height="wrap_content"></Button>
+		<Button android:text="get last" android:id="@+id/getlast"
+			android:layout_width="100dip" android:layout_height="wrap_content"></Button>
+		<Button android:text="delete last" android:id="@+id/dellast"
+			android:layout_width="100dip" android:layout_height="wrap_content"></Button>
+			
+	</LinearLayout>
+</LinearLayout>

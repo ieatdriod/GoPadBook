@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+		<!-- top panel -->
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/RelativeLayout_Title">
+
+		<ImageButton android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:background="@drawable/gsi_br06" android:id="@+id/TopBG"></ImageButton>
+
+
+		<ImageButton android:id="@+id/setting_ImageButton_Back"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true" android:background="@drawable/gsi_button01_btn">
+		</ImageButton>
+
+		<RelativeLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/RelativeLayout_Catalog"
+			android:layout_toRightOf="@+id/setting_ImageButton_Back">
+
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:background="@drawable/gsi_title_bg01" android:id="@+id/setting_ImageButton_bg"/>
+
+			<ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:background="@drawable/gsi_title09" android:id="@+id/setting_ImageButton"></ImageButton>
+		</RelativeLayout>
+
+	</RelativeLayout>
+	<!-- end top panel -->
+
+	<!-- content area -->
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_below="@+id/RelativeLayout_Title" android:background="#FFFFFF">
+		
+			<ImageView android:layout_height="wrap_content"
+				android:layout_width="fill_parent" android:layout_centerHorizontal="true"
+				android:src="@drawable/ivi_content" android:background="@null" android:scaleType="center">
+			</ImageView>
+
+		
+
+
+			<TextView android:id="@+id/about_version"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				style="?android:attr/textAppearanceMedium" android:text="@string/about_msg1"
+
+				android:textColor="#000000"  android:gravity="center"/>
+
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" style="?android:attr/textAppearanceMedium"
+				android:text="@string/about_msg2" android:textColor="#000000"  android:gravity="center"/>
+
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" style="?android:attr/textAppearanceMedium"
+				android:text="@string/about_msg3" android:lines="4" android:textColor="#000000" android:gravity="center_vertical|center_horizontal"/>
+	</LinearLayout>	
+</RelativeLayout>	
+
+

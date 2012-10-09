@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+  		android:layout_width="fill_parent"
+  		android:layout_height="fill_parent"
+  		android:background="#FFFFFFFF"
+	>
+
+		<ImageButton  
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true"
+			android:id="@+id/back"   
+			android:background="#FFFFFF"   
+        	android:layout_width="70dip"
+          	android:layout_height="40dip"
+          	android:src = "@drawable/ani_button21_btn"
+        />
+      	<ImageButton  
+		    android:background="#FFFFFF"
+			android:layout_alignParentBottom="true"
+			android:layout_toLeftOf="@id/back"
+      		android:id="@+id/zoom_in"   
+      		android:src = "@drawable/ani_button22_btn"
+        	android:layout_width="70dip"
+          	android:layout_height="40dip"  	
+        />        
+        <ImageButton  
+	        android:background="#FFFFFF"
+            android:src = "@drawable/ani_button23_btn"
+        	android:layout_alignParentBottom="true"
+        	android:layout_toLeftOf="@id/zoom_in"
+        	android:id="@+id/zoom_out"   
+        	android:layout_width="70dip"
+          	android:layout_height="40dip"   	
+        />   	   
+      		<org.iii.ideas.reader.LargeImageView
+			android:id="@+id/img_view"   
+      		android:layout_alignParentTop="true"
+			android:layout_above="@id/zoom_out"
+      		android:layout_height="fill_parent"   
+      		android:layout_width="fill_parent"/>
+	</RelativeLayout>

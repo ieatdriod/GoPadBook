@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:id="@+id/panel" 
+	android:layout_height="fill_parent">
+	<!-- top panel -->
+
+	<!-- end top panel -->
+
+	<!-- content area -->
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:background="@drawable/ani_paper01">
+
+		<ImageButton android:id="@+id/lastpage_ImageButton_Logo"
+			android:layout_height="wrap_content" android:layout_width="wrap_content"
+			android:background="@drawable/ani_lastpage01"
+			android:layout_alignParentTop="true" android:layout_marginTop="61dip"
+			android:layout_centerInParent="true">
+		</ImageButton>
+
+		<TextView android:text="Content" 
+				  android:layout_below="@+id/lastpage_ImageButton_Logo" 
+				  android:layout_width="wrap_content" 
+				  android:layout_height="wrap_content" 
+				  android:id="@+id/lastpage_TextView_Content" 
+				  android:layout_centerInParent="true" 
+				  android:textColor="#0A2000" 
+				  android:textSize="25dip" 
+				  android:layout_marginLeft="30dip" 
+				  android:layout_marginRight="30dip">
+				  </TextView>
+		
+		<ImageButton android:id="@+id/lastpage_ImageButton_Bar"
+			android:layout_below="@+id/lastpage_TextView_Content"
+			android:layout_height="wrap_content" 
+			android:layout_width="wrap_content" 
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="25dip"
+			android:background="@drawable/ian_trial02"
+			>
+		</ImageButton>
+
+
+
+</RelativeLayout>
+	<!-- end content area -->
+</LinearLayout>
+   
+

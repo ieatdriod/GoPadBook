@@ -1,8 +1,465 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
+    <string name="iii_app_name">myBook 閱讀器(Pad)</string>
+    <string name="iii_showAM_exception">訊息</string>
+    <string name="iii_showAM_ok">確認</string>
+    <string name="iii_showAM_cancel">取消</string>
+    <string name="iii_showAM_wait">wait</string>
+    <string name="iii_unWork">未完成</string>
+    <string name="iii_reading_percentage">位於全書的處</string>
+    <string name="iii_button_back">返回</string>
+    <string name="iii_zoom_in">+</string>
+    <string name="iii_zoom_out">-</string>
+    <string name="iii_setting_backup_read_record_value">立即備份</string>
+    <string name="iii_setting_download_read_record_value">立即下載</string>
+    <string name="iii_setting_del_all_download_book_value">立即刪除</string>
+    <string name="iii_setting_now_register">立即註冊</string>
+    <string name="iii_setting_now_login">立即登入</string>
+    <string name="iii_setting_now_logout">立即登出</string>
+    <string name="iii_setting_logout">登出</string>
+    <string name="iii_setting_logout_confirm">登出後應用程式會自動重新啟動，是否登出?</string>
+    <string name="iii_relogin">重新登入</string>
+    <string name="iii_relogin_confirm">應用程式會自動登出並重新啟動，是否繼續?</string>
+    <string name="iii_not_support_wan">很抱歉，本服務尚未支援網外用戶!</string>
+    <string name="iii_last_page_to_store">點選此處，進入myBook書城</string>
+    <string name="iii_last_page_hint_formal_1">感謝您購買此書，更多有</string>
+    <string name="iii_last_page_hint_formal_2">關此書”作者”與”出版社”之推</string>
+    <string name="iii_last_page_hint_formal_3">薦書籍，請點選下方進入!</string>
+    <string name="iii_last_page_hint_trial_1">本書為試閱版，</string>
+    <string name="iii_last_page_hint_trial_2">請問是否立即購買正式版?</string>
+    <string name="iii_introduction">操作說明</string>
+    <string name="iii_sample_text_1">台灣大哥大 myBook書城24小時不打烊!</string>
+    <string name="iii_sample_text_2">  myBook store of TaiwanMobile always open for you.</string>
+    <string name="iii_searching">搜尋中，請稍候...</string>
+    <string name="iii_mebook">有聲書</string>
+    <string name="iii_mebook_title">&amp;lt;有聲書&amp;gt;</string>
+    <string name="iii_read_record_backuping">閱讀紀錄備份中，請稍候...</string>
+    <string name="iii_read_record_backup_ok">上傳成功</string>
+    <string name="iii_read_record_backup_error">上傳失敗，請稍後再試！</string>
+    <string name="iii_read_record_downloading">閱讀紀錄下載中，請稍候...</string>
+    <string name="iii_read_record_download_ok">下載成功</string>
+    <string name="iii_read_record_download_error">下載失敗，請稍後再試！</string>
+    <string name="iii_setting_deling">刪除檔案中，請稍後</string>
+    <string name="iii_setting_del_done">書本已刪除</string>
+    <string name="iii_download_online_list">下載線上書櫃清單中，請稍候...</string>
+    <string name="iii_download_no_space">空間不足，無法下載，請先移除部份檔案！</string>
+    <string name="iii_del_all_book">刪除所有已下載書籍</string>
+    <string name="iii_del_all_book_message">此動作會把書櫃中所有的書籍刪除，您確定要進行本動作？</string>
+    <string name="iii_re_register">重新註冊手機</string>
+    <string name="iii_re_register_message">重新註冊後，您已經下載到終端設備內的書籍將無法開啟，刪除書籍後重新至線上書櫃下載即可正常使用!</string>
+    <string name="iii_about_twm">關於myBook</string>
+    <string name="iii_net_not_conn">網路連線失敗，無法註冊手機！請稍後或移動您的所在地至訊號良好位置，再重新開啓程式一次！</string>
+    <string name="iii_server_time_out">伺服器逾時沒有回應，無法註冊手機！請稍後或移動您的所在地至訊號良好位置，再重新開啓程式一次！</string>
+    <string name="iii_get_p12_error">無法產生註冊檔，註冊手機失敗！請洽188客服專線</string>
+    <string name="iii_ssl_error">網站的安全性憑證已過期！請洽188客服專線</string>
+    <string name="iii_get_deviceID_error">無法取得Device ID，註冊手機失敗！請洽188客服專線</string>
+    <string name="iii_server_return_error">伺服器回傳資料錯誤，請先關閉程式，請稍後或移動您的所在地至訊號良好位置，再重新開啓程式一次！</string>
+    <string name="iii_register_error">因不明原因，無法成功註冊手機！請洽188客服專線</string>
+    <string name="iii_register_num_over_limit">註冊的手機數超過群組限制，無法成功加入此手機！</string>
+    <string name="iii_p12_download_ok">重新註冊成功</string>
+    <string name="iii_plz_use_twm_net">目前僅提供離線閱讀！請使用台灣大哥大網路連線，並將APN設定變更成twm，再重新啓動即可正常運作！</string>
+    <string name="iii_server_busy_notregister">伺服器系統繁忙，無法驗證手機，請重新註冊手機！</string>
+    <string name="iii_server_register_error">伺服器註冊手機發生錯誤！請洽188客服專線</string>
+    <string name="iii_cant_update_phone">無法置換已註冊的手機！請重新啟動閱讀器，或請洽188客服專線</string>
+    <string name="iii_server_no_response">伺服器目前無回應，請稍後再試</string>
+    <string name="iii_server_SocketException">網路連線失敗，無法下載書籍！由於您所在的位置網路連線品質不佳或擁塞，請稍後或移動您的所在地再試。</string>
+    <string name="iii_server_SocketTimeout">網路連線失敗，無法下載書籍！由於您所在的位置網路連線品質不佳或擁塞，請稍後或移動您的所在地再試。</string>
+    <string name="iii_server_other_error">下載過程發生錯誤！</string>
+    <string name="iii_network_disconnect">網路無法連線，請稍後再試！</string>
+    <string name="iii_check_ver_error">版本檢查失敗！由於您所在的位置網路連線品質不佳或擁塞，請稍後或移動您的所在地再試。</string>
+    <string name="iii_check_backup_record">系統將覆蓋您線上閱讀紀錄，是否確認備份 ?</string>
+    <string name="iii_check_download_record">系統將覆蓋您手機上閱讀紀錄，是否確認下載 ? </string>
+    <string name="iii_check_backup_record_title">閱讀紀錄備份</string>
+    <string name="iii_check_download_record_title">閱讀紀錄下載</string>
+    <string name="iii_underline_dialog_title"> 選項 </string>
+    <string name="iii_underline_dialog_action"> 劃線 </string>
+    <string name="iii_underline_dialog_delete"> 刪除 </string>
+    <string name="iii_underline_dialog_cancel"> 取消 </string>
+    <string name="iii_OnlineCantGetBooklist">無法連線到線上書櫃，請稍後或移動您的所在地至訊號良好位置，重新連線！</string>
+    <string name="iii_CheckNetworkMessage">正在檢查網路中，請稍候...</string>
+    <string name="iii_CheckVerMessage">檢查軟體更新，請稍候...</string>
+    <string name="iii_NetworkNotConnMessage">沒有偵測到行動網路連線，目前只能離線閱讀！</string>
+    <string name="iii_UnknowMessage">因不明原因，造成系統異常！請再重新開啓程式一次！</string>
+    <string name="iii_CheckPhoneMessage">正在驗證手機中，請稍候...</string>
+    <string name="iii_SyncMessage">正在同步新購書單中，請稍候...</string>
+    <string name="iii_SyncSucessMessage">已成功同步新購書單</string>
+    <string name="iii_get_book_list_error">連線失敗，無法同步新購買的書籍清單！請稍後或移動您的所在地至訊號良好位置，再重新開啓程式一次！</string>
+    <string name="iii_online_title">線上書櫃</string>
+    <string name="iii_my_title">我的書櫃</string>
+    <string name="iii_VerUpdateMessage">版本更新</string>
+    <string name="iii_VerUpdateMessageForce">本軟體已經有更新版本，更新軟體後才能繼續使用！</string>
+    <string name="iii_VerUpdateMessageUnforce">本軟體已經有更新版本，請問是否要更新？</string>
+    <string name="iii_NoNewVer">無新版本</string>
+    <string name="iii_ServerTimeOutMessage">無法連線到伺服器，目前只能離線閱讀！由於您所在的位置網路連線品質不佳或擁塞，請稍後或移動您的所在地再試。</string>
+    <string name="iii_GetDeviceIDErrorMessage">無法取得Device ID，註冊手機失敗！請洽188客服專線</string>
+    <string name="iii_ServerReturnErrorMessage">伺服器回傳資料錯誤，請先關閉程式，請稍後或移動您的所在地至訊號良好位置，再重新開啓程式一次！</string>
+    <string name="iii_server_busy_only_unline">伺服器系統繁忙，無法驗證手機，目前只能離線閱讀！請稍後或移動您的所在地再試。</string>
+    <string name="iii_manage_domain">註冊手機超過限制，是否從已註冊手機擇一刪除？</string>
+    <string name="iii_last_page_upload_progress">上傳最後閱讀頁中...</string>
+    <string name="iii_last_page_download_progress">同步最後閱讀頁中...</string>
+    <string name="iii_decrypt_progress">解密中...</string>
+    <string name="iii_unzip_progress">讀取中...</string>
+    <string name="iii_last_page_upload_success">最後閱讀頁上傳成功</string>
+    <string name="iii_last_page_upload_fail">最後閱讀頁上傳失敗</string>
+    <string name="iii_last_page_sync_success">最後閱讀頁同步成功</string>
+    <string name="iii_last_page_sync_fail">最後閱讀頁同步失敗</string>
+    <string name="iii_file_error">檔案毀損</string>
+    <string name="iii_decrypt_error">註冊檔錯誤無法開啟，請移除本書後至線上書櫃重新下載即可。</string>
+    <string name="iii_decrypt_io_error">無法開啟加密檔案，請移除本書後至線上書櫃重新下載即可。</string>
+    <string name="iii_decrypt_permission_error">權限不符，無法開啟加密檔案！</string>
+    <string name="iii_decrypt_p12_error">註冊檔不匹配，無法開啓加密檔案！請確認檔案是否毀損，或移除本書後至線上書櫃重新下載即可。</string>
+    <string name="iii_decode_error">無法開啟檔案</string>
+    <string name="iii_parse_error">無法取得書籍資料</string>
+    <string name="iii_page_no_text">本頁無可劃線內容</string>
+    <string name="iii_error">錯誤</string>
+    <string name="iii_bookmark_overflow">本書書籤已超過十筆，請至索引頁刪除再行新增!</string>
+    <string name="iii_annotation_overflow">本書註記已超過十筆，請至索引頁刪除再行新增!</string>
+    <string name="iii_underline_overflow">本書劃線已超過十筆，請至索引頁刪除再行新增!</string>
+    <string name="iii_search_hint">書籍全文檢索可能需要數分鐘的時間，請問是否進行搜尋?</string>
+    <string name="iii_search_not_found">查無結果，請重新搜尋</string>
+    <string name="iii_now_searching">搜尋中...</string>
+    <string name="iii_underline_hint">請在文字上拖曳劃線</string>
+    <string name="iii_underline_delete_hint">請點選已劃線文字進行刪除</string>
+    <string name="iii_underline_leave">已離開劃線介面</string>
+    <string name="iii_description_img">(圖片)</string>
+    <string name="iii_description_hr">(分隔線)</string>
+    <string name="iii_SearchBook">請輸入名稱：</string>
+    <string name="iii_ann_hint">請輸入註記：</string>
+    <string name="iii_reader_catalog_jump_bottom">目錄及跳頁</string>
+    <string name="iii_reader_bookmark_index_bottom">書籤索引</string>
+    <string name="iii_reader_highlight_index_bottom">劃線索引</string>
+    <string name="iii_reader_notes_index_bottom">註記索引</string>
+    <string name="iii_reader_book_info_bottom">本書資訊</string>
+    <string name="iii_reader_notes_writing">註記書寫</string>
+    <string name="iii_setting">設定</string>
+    <string name="iii_publisher">出版社：</string>
+    <string name="iii_authors">作者：</string>
+    <string name="iii_tag_download">""</string>
+    <string name="iii_setting_default">設定項目已回復初始值</string>
+    <string name="iii_setting_logout_success">已成功登出，自動重啟應用程式</string>
+    <string name="iii_setting_logout_failed">登出失敗，請確認網路連線</string>
+    <string name="iii_search_tip">請輸入欲查詢的關鍵字</string>
+    <string name="iii_check_del_book">刪除選擇的書籍</string>
+    <string name="iii_check_del_message">確認刪除</string>
+    <string name="iii_long_click_del">刪除本書</string>
+    <string name="iii_long_click_score">進行評分</string>
+    <array name="iii_settingItem">
+        <item>書櫃情境主題</item>
+        <item>自動同步新購書單</item>
+        <item>自動同步最後閱讀頁</item>
+        <item>我的閱讀紀錄立即備份</item>
+        <item>我的閱讀紀錄立即下載</item>
+        <item>刪除所有已下載書籍</item>
+        <item>重新註冊手機</item>
+        <item>關於myBook</item>
+    </array>
+    <array name="iii_reader_settingItem">
+        <item>書本底圖樣式</item>
+        <item>啟動中文直式閱讀</item>
+        <item>啟動夜間模式</item>
+        <item>選擇字體大小</item>
+        <item>選擇文字顏色</item>
+        <item>選擇劃線顏色</item>
+        <item>翻頁效果</item>
+        <item>螢幕旋轉閱讀</item>
+        <item>啟動隱藏功能列</item>
+        <item>軟體操作說明</item>
+        <item>回復預設值</item>
 
-    <string name="app_name">PadBook</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
+    </array>
+    <array name="iii_bookcase_support_bodytype_code">
+        <item>201</item>
+        <item>203</item>
+        <item>211</item>
+        <item>213</item>
+    </array>
+    <array name="iii_bookcase_abandon_bodytype_code">
+        <item>202</item>
+        <item>212</item>
+    </array>
+    <array name="iii_bookcase_background_style_value">
+        <item>木紋</item>
+        <item>科技</item>
+        <item>浪漫</item>
+    </array>
+    <string name="default_color">書本預設顏色</string>
+    <array name="iii_reader_setting_book_background_style_value">
+        <item>綠色環保</item>
+        <item>石材紋</item>
+        <item>楓葉紋</item>
+    </array>
+    <!--     
+        <item>水波紋</item>
+        <item>雲彩紋</item>
+    </array> 
+  -->
+    <array name="iii_reader_setting_font_size">
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+        <item>22</item>
+        <item>24</item>
+    </array>
+    <array name="iii_reader_setting_color_value">
+        <item>黑色-1</item>
+        <item>黑色-2</item>
+        <item>黑色-3</item>
+        <item>白色-1</item>
+        <item>白色-2</item>
+        <item>白色-3</item>
+        <item>棕色-1</item>
+        <item>棕色-2</item>
+        <item>棕色-3</item>
+        <item>藍色-1</item>
+        <item>藍色-2</item>
+        <item>藍色-3</item>
+        <item>綠色-1</item>
+        <item>綠色-2</item>
+        <item>綠色-3</item>       
+        <item>橙色-2</item>
+        <item>橙色-3</item>
+        <item>黃色-1</item>
+        <item>紅色-1</item>
+        <item>紅色-2</item>
+        <item>紅色-3</item>
+        <item>紫色-1</item>
+        <item>紫色-2</item>
+        <item>紫色-3</item>
+    </array>
+    <array name="iii_reader_setting_flip_value">
+        <item>無</item>
+		<item>翻轉</item>
+		<item>滑動</item>
+    </array>
+    <string name="iii_bookPath">/sdcard/aaa.epub</string>
+    <!-- MeReader -->
+    <string name="alert_dialog_username">使用者帳號</string>
+    <string name="alert_dialog_password">使用者密碼</string>
+    <string name="progress_title">請稍候</string>
+    <string name="progress_message">書本內容載入中...</string>
+    <string name="search_message">搜尋中...</string>
+    <string name="active_state_on">已授權</string>
+    <string name="active_state_off">未授權</string>
+    <string name="chapter_list_title">章節目錄</string>
+    <string name="bookmark_list_title">書籤列表</string>
+    <string name="delete_bookmark_title">清空書籤</string>
+    <string name="delete_bookmark_prompt">所有書籤將被刪除</string>
+    <string name="bookmark_format">(空白:第%d句)</string>
+    <string name="no_data">無資料</string>
+    <string name="extend_title">延伸內容</string>
+    <string name="extend_voc_title">重要字彙</string>
+    <string name="extend_syn_title">同義字</string>
+    <string name="extend_ant_title">反義字</string>
+    <string name="extend_app_title">延伸說明</string>
+    <string name="extend_voc_play">字彙發音</string>
+    <string name="extend_spell_title">漢字拼音</string>
+    <string name="ps_title">章節附錄</string>
+    <string name="delete_book_title">刪除書本</string>
+    <string name="delete_book_message">你確定要將此書本除嗎?</string>
+    <string name="mereader_range_setting_title">選擇播放範圍</string>
+    <string name="mereader_range_setting_item1">播放全部</string>
+    <string name="mereader_range_setting_item2">播放AB範圍</string>
+    <string name="mereader_range_setting_item3">只播放書籤</string>
+    <string name="mereader_range_setting_item4">只播放不熟單字</string>
+    <string name="mereader_range_setting_item5">只播放略熟單字</string>
+    <string name="mereader_range_setting_item6">播放不熟和略熟單字</string>
+    <string name="mereader_range_setting_item7">只播放已會單字</string>
+    <string name="mereader_pos_setting_title">設立位置標記</string>
+    <string name="mereader_pos_setting_item1">設為A點(起點)</string>
+    <string name="mereader_pos_setting_item2">設為B點(終點)</string>
+    <string name="mereader_pos_setting_item3">取消AB點</string>
+    <string name="mereader_pos_setting_item4">設為書籤</string>
+    <string name="search_title">搜尋</string>
+    <string name="search_result">搜尋結果:</string>
+    <string name="search_begin">開始搜尋</string>
+    <string name="goto_bookstore">進入書房</string>
+    <string name="setting_title">設定</string>
+    <string name="setting_repeat_count">自動複讀次數</string>
+    <string name="setting_gap">語句間隔時間</string>
+    <string name="setting_font_type">字型大小</string>
+    <string name="setting_hide_precnet">克漏字比率</string>
+    <string name="setting_auto_repeat">是否自動循環播放</string>
+    <string name="setting_content">台灣大哥大myBook書城24小時不打烊!  myBook store of TaiwanMobile always open for you.</string>
+    <string name="setting_help">顯示操作說明</string>
+    <string name="setting_reset">設為預設值</string>
+    <string name="setting_help_btn">立即顯示</string>
+    <string name="setting_reset_btn">回預設</string>
+    <string name="add_bookmark">加入書籤</string>
+    <string name="bookmark_manage_title">整理書籤</string>
+    <string name="delete_bookmark">刪除</string>
+    <string name="mereader_play_range_title">設定播放範圍</string>
+    <string name="mereader_play_range_prompt">播放範圍:</string>
+    <string name="record_message_1">請按按鍵開始</string>
+    <string name="record_message_2">錄音中...</string>
+    <string name="record_message_3">播放原文語音…</string>
+    <string name="record_message_4">播放錄製語音…</string>
+    <string name="OK">確定</string>
+    <string name="CANCEL">取消</string>
+    <string name="up_one_level">回上層目錄</string>
+    <string name="current_dir">.</string>
+    <string name="book_info_url1">http://www.mebook.com.tw/google/mainpage.asp</string>
+    <string name="book_info_content">有聲書-日語學習系列\n快熟五十音\n出版社：我識出版社\n作者：郭欣怡</string>
+    <string name="lastpage_content1">感謝您購買此書，更多有關此書”作者”與”出版社”之推薦書籍，請點選下方進入!</string>
+    <string name="lastpage_content2">本書為試閱版，請問是否立即購買正式版？</string>
+    <string name="lastpage_bar1">點選此處，進入myBook書城</string>
+    <string name="lastpage_bar2">立 即 購 買</string>
+    <string name="bookinfo_publisher">出版社:</string>
+    <string name="bookinfo_author">作者:</string>
+    <string name="about_msg1">TWM myBook Version </string>
+    <string name="about_msg2">Copyright 2010 by 臺灣大哥大　</string>
+    <string name="about_msg3">技術授權：曉騰國際 MeBook　</string>
+    <string name="time_stamp_format">yyyy/MM/dd hh:mm:ss</string>
+    <string name="drm_issue_title">資料讀取錯誤</string>
+    <string name="drm_issue_rightobject">權限不符，無法開啟加密檔案!</string>
+    <string name="drm_issue_p12">手機尚未註冊或者註冊檔不符，無法開啟加密檔案</string>
+    <string name="drm_issue_io">無法開啟加密檔案，請刪除書籍後再重新下載!</string>
+    <string name="drm_issue_unknow">未知的錯誤</string>
+    <string name="input_stream_provider_open_fail">無法開啟加密檔案，請刪除後重新下載!</string>
+    <string name="file_open_fail">檔案錯誤無法開啟，請刪除電子書後至線上書櫃重新下載</string>
+    <string name="load_last_page_title">同步最後閱讀頁</string>
+    <string name="load_last_page_message">正在同步最後閱讀頁中...</string>
+    <string name="upload_last_page_title">上傳最後閱讀頁</string>
+    <string name="upload_last_page_message">正在上傳最後閱讀頁中...</string>
+    <string name="upload_last_page_fail">上傳最後閱讀頁失敗</string>
+    <string name="network_not_available">無法連上網路，請稍後或移動您的所在地至訊號良好位置，重新連線！</string>
+    <string name="illegal_device">目前您下載的程式不支援您的設備，建議您下載正確版本</string>
+    <string name="realbook_title">myBook</string>
+    <string name="data_prepare">資料準備中...</string>
+    <string name="token_expire">認證過期，請重新認證</string>
+    <string name="msgbox_expire_title">認證過期</string>
+    <string name="msgbox_expire_content">認證過期，請問是否重新認證？</string>
+    <string name="msgbox_logout_title">登出</string>
+    <string name="msgbox_logout_content">系統將登出您目前帳號後重新啟動，是否確認登出？</string>
+    <string name="iii_book_city_url">http://m.mybook.match.net.tw/TWMStoreFrontWeb/welcome.mvc</string>
+    <string name="iii_book_city_setting_url">http://m.mybook.match.net.tw/TWMStoreFrontWeb/manageGroup.mvc</string>
+    <string name="iii_book_score_url">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookVote.mvc?content_id=</string>
+    <string name="iii_book_manage_url">http://m.mybook.match.net.tw/TWMStoreFrontWeb/manageGroup.mvc</string>
+    <string name="iii_last_page_upload_url">http://delivery.twmebook.match.net.tw/DeliverWeb/New_upload?deliver_id=</string>
+    <string name="iii_last_page_download_url">http://delivery.twmebook.match.net.tw/DeliverWeb/New_download?deliver_id=</string>
+    <string name="iii_twm_last_formal">http://m.mybook.match.net.tw/TWMStoreFrontWeb/executeSearch.mvc?title=</string>
+    <string name="iii_twm_last_trial">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookProfile.mvc?content_id=</string>
+    <string name="iii_twm_download_read_record">http://delivery.twmebook.match.net.tw/DeliverWeb/New_alldownload</string>
+    <string name="iii_twm_backup_read_record">http://delivery.twmebook.match.net.tw/DeliverWeb/New_allupload</string>
+    <string name="iii_twm_download_ebook">http://delivery.twmebook.match.net.tw/DeliverWeb/New_downloadEBook?deliver_id=</string>
+    <string name="iii_twm_download_all_list">http://delivery.twmebook.match.net.tw/DeliverWeb/New_all</string>
+    <string name="iii_twm_download_list_by_updated">http://delivery.twmebook.match.net.tw/DeliverWeb/New_all?updated_at=</string>
+    <string name="iii_twm_manage_domain">http://delivery.twmebook.match.net.tw/DeliverWeb/New_Manage_Domain?id=</string>
+    <string name="iii_version_control">http://delivery.twmebook.match.net.tw/DeliverWeb/New_CheckViewerVersion?platform=AndroidPad</string>
+    <string name="lastpage_url1">http://m.mybook.match.net.tw/TWMStoreFrontWeb/executeSearch.mvc?title=</string>
+    <string name="lastpage_url2">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookProfile.mvc?content_id=%s</string>
+    <string name="lastpage_url3">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookVote.mvc?content_id=%s</string>
+    <string name="iii_cms_cover">http://delivery.twmebook.match.net.tw</string>
+    <string name="web_api_lastpage_down">http://delivery.twmebook.match.net.tw/DeliverWeb/New_download?deliver_id=</string>
+    <string name="web_api_lastpage_up">http://delivery.twmebook.match.net.tw/DeliverWeb/New_upload?deliver_id=</string>
+    <string name="web_api_brand_info">http://delivery.twmebook.match.net.tw/DeliverWeb/SupportAPI?platform=AndroidPad</string>
+    <!--
+	<string name="iii_book_city_url">http://m.mybook.match.net.tw/TWMStoreFrontWeb/welcome.mvc</string>
+	<string name="iii_book_city_setting_url">http://m.mybook.match.net.tw/TWMStoreFrontWeb/manageGroup.mvc</string>      	
+  	<string name="iii_book_score_url">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookVote.mvc?content_id=</string>
+  	<string name="iii_book_manage_url">http://m.mybook.match.net.tw/TWMStoreFrontWeb/manageGroup.mvc</string>
+  	<string name="iii_last_page_upload_url">http://delivery.twmebook.match.net.tw/DeliverWeb/upload?deliver_id=</string>
+  	<string name="iii_last_page_download_url">http://delivery.twmebook.match.net.tw/DeliverWeb/download?deliver_id=</string>
+  	<string name="iii_twm_last_formal">http://m.mybook.match.net.tw/TWMStoreFrontWeb/executeSearch.mvc?title=</string>
+  	<string name="iii_twm_last_trial">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookProfile.mvc?content_id=</string>
 
+	<string name="iii_twm_download_read_record">http://delivery.twmebook.match.net.tw/DeliverWeb/alldownload</string>
+  	<string name="iii_twm_backup_read_record">http://delivery.twmebook.match.net.tw/DeliverWeb/allupload</string>
+  	<string name="iii_twm_download_ebook">http://delivery.twmebook.match.net.tw/DeliverWeb/downloadEBook?deliver_id=</string>
+  	<string name="iii_twm_download_all_list">http://delivery.twmebook.match.net.tw/DeliverWeb/all</string>
+  	<string name="iii_twm_download_list_by_updated">http://delivery.twmebook.match.net.tw/DeliverWeb/all?updated_at=</string>
+  	<string name="iii_twm_manage_domain">http://delivery.twmebook.match.net.tw/DeliverWeb/Manage_Domain?id=</string>
+  	<string name="iii_version_control">http://delivery.twmebook.match.net.tw/DeliverWeb/CheckViewerVersion?platform=AndroidPad</string>
+
+    <string name="lastpage_url1">http://m.mybook.match.net.tw/TWMStoreFrontWeb/executeSearch.mvc?title=</string>
+    <string name="lastpage_url2">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookProfile.mvc?content_id=%s</string>
+    <string name="lastpage_url3">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookVote.mvc?content_id=%s</string>	
+    <string name="iii_cms_cover">http://delivery.twmebook.match.net.tw</string>	
+    
+    <string name="web_api_lastpage_down">http://delivery.twmebook.match.net.tw/DeliverWeb/download?deliver_id=</string>
+    <string name="web_api_lastpage_up">http://delivery.twmebook.match.net.tw/DeliverWeb/upload?deliver_id=</string>
+	<string name="web_api_brand_info">http://delivery.twmebook.match.net.tw/DeliverWeb/SupportAPI?platform=AndroidPad</string>
+ -->
+    <!-- gsi pdf -->
+    <string name="app_name">GSieBook</string>
+    <string name="about">About</string>
+    <string name="goto_page">Go to page...</string>
+    <string name="goto_page_dialog_title">Go to page</string>
+    <string name="goto_page_go_button">Go</string>
+    <string name="rotate_page_left">Rotate left</string>
+    <string name="rotate_page_right">Rotate right</string>
+    <string name="find_text">Find...</string>
+    <string name="find_dialog_title">Find text</string>
+    <string name="find_go_button">Find</string>
+    <string name="find_cancel_button">Cancel</string>
+    <string name="clear_find_text">Clear find</string>
+    <string name="cancel">Cancel</string>
+    <string name="get_outline">Get OutLine</string>
+    <string name="searching_for">Searching for "%1"</string>
+    <string name="page_of">Searching on page "%1"</string>
+    <!-- GSi tokens -->
+    <!-- 
+		<string name="web_api_lastpage_down">http://124.29.140.83/DeliverWeb/download?deliver_id=</string>
+		<string name="web_api_lastpage_up">http://124.29.140.83/DeliverWeb/upload?deliver_id=</string>
+	 -->
+    <!--  staging-->
+    <string name="web_api_buy">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookProfile.mvc?content_id=</string>
+    <string name="web_api_related">http://m.mybook.match.net.tw/TWMStoreFrontWeb/executeSearch.mvc?title=</string>
+    <string name="web_api_rating">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookVote.mvc?content_id=</string>
+    <!-- production -->
+    <!--
+	<string name="web_api_buy">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookProfile.mvc?content_id=</string>
+	<string name="web_api_related">http://m.mybook.match.net.tw/TWMStoreFrontWeb/executeSearch.mvc?title=</string>
+	<string name="web_api_rating">http://m.mybook.match.net.tw/TWMStoreFrontWeb/ebookVote.mvc?content_id=</string>
+		-->
+    <!--
+	<string name="web_api_lastpage_down">http://delivery.twmebook.match.net.tw/DeliverWeb/download?deliver_id=</string>
+	<string name="web_api_lastpage_up">http://delivery.twmebook.match.net.tw/DeliverWeb/upload?deliver_id=</string>
+	-->
+    <string name="GSI_NO_TOC">本書無目錄</string>
+    <string name="GSI_OK">確認</string>
+    <string name="GSI_CANCEL">取消</string>
+    <string name="GSI_ERROR">錯誤</string>
+    <string name="GSI_FORMAT_INCORRECT">檔案格式不正確，可能已經毀損，請重新下載。</string>
+    <string name="GSI_FILE_ERROR_1">無法開啟加密檔案，請刪除後重新下載！</string>
+    <string name="GSI_FILE_ERROR_2">無法開啟加密檔案，請刪除書籍後再重新下載！</string>
+    <string name="GSI_FILE_ERROR_3">權限不符，無法開啟加密檔案！</string>
+    <string name="GSI_FILE_ERROR_4">手機尚未註冊或者註冊檔不符，無法開啟加密檔案！</string>
+    <string name="GSI_PREVIEW_MSG">本書為試閱版，請問是否立即購買正式版？</string>
+    <string name="GSI_THANKS_MSG">感謝您購買此書，更多有關此書\"作者\"與\"出版社\"之推薦書籍，請點選下方進入。</string>
+    <string name="GSI_ROTATE_SETTING">螢幕旋轉閱讀</string>
+    <string name="GSI_HELP_SETTING">軟體操作說明</string>
+    <string name="GSI_SWITCH_SETTING">啟動左翻閱讀</string>
+    <string name="GSI_BOOKMARK_TEXT">第%1$s頁</string>
+    <string name="GSI_PROGRESS_RENDERING">顯示中...</string>
+    <string name="GSI_LOADING_MSG">檔案開啟中...</string>
+    <string name="GSI_LASTPAGE_UPLOAD_MSG">最後閱讀頁上傳成功</string>
+    <string name="GSI_LASTPAGE_DOWNLOAD_MSG">最後閱讀頁同步成功</string>
+    <string name="GSI_MARKER_OPT">選項</string>
+    <string name="GSI_MARKER_MARK">劃線</string>
+    <string name="GSI_MARKER_DELETE">刪除</string>
+    <string name="GSI_MARKER_CANCEL">取消</string>
+    <string name="GSI_SEARCH_DIALOG_TITLE">搜尋</string>
+    <string name="GSI_SEARCH_NOT_FOUND">沒有符合項目</string>
+    <string name="GSI_SEARCHING">搜尋中</string>
+    <string name="GSI_SEARCH_HINT">請輸入名稱：</string>
+    <string name="GSI_FIND_MORE">正在載入更多...</string>
+    <string name="GSI_MARK_ADD_NOTIFY">請在文字上拖曳劃線</string>
+    <string name="GSI_MARK_DEL_NOTIFY">請點選已劃線文字進行刪除</string>
+    <string name="GSI_SEARCH_NOTEXT_HINT">請輸入欲搜尋的文字</string>
+    <string name="GSI_SEARCH_FOR">搜尋 %1$s</string>
+    <string name="GSI_SEARCHING_ON">正在搜尋第%1$s頁</string>
+    <string name="context_menu_item_view_mark">劃線</string>
+    <string name="context_menu_item_view_search">搜尋</string>
+    <string name="context_menu_item_view_addannot">加入註記</string>
+    <string name="context_menu_item_view_delannot">刪除註記</string>
+    <string name="msgbox_first_time_warning">本軟體運作時會進行網路資料傳輸，當透過行動上網連線，您所屬之電信營運商將依您申辦的數據資費就用量多寡計收傳輸費。</string>
+    <string name="GSI_MARKER_UP_TO_LIMIT">本筆劃線內容數目超過上限，請分成多筆劃線。</string>
+    <string name="GSI_DEVICE_ID_EMPTY_MSG">請先用Wi-Fi連結網際網路後再操作</string>
 </resources>

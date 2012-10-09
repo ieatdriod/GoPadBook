@@ -1,0 +1,37 @@
+<RelativeLayout android:id="@+id/RelativeLayout01"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<RelativeLayout android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:id="@+id/RelativeLayout_Title"
+		android:layout_gravity="top|center_horizontal">
+		<ImageView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:background="@drawable/gsi_table06"
+			android:layout_alignParentTop="true" />
+		<Button android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:id="@+id/gsimedia_btn_title_left"
+			android:background="@drawable/gsi_button03_btn"
+			android:layout_alignParentLeft="true" android:clickable="true" />
+		<ImageView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:layout_toRightOf="@id/gsimedia_btn_title_left"
+			android:id="@+id/gsimedia_title" android:src="@drawable/gsi_title07" />
+	</RelativeLayout>
+
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:background="@drawable/gsi_paper01"
+		android:layout_below="@id/RelativeLayout_Title">
+		<TextView android:id="@+id/info"
+			android:text="台灣大哥大 myBook書城24小時不打烊! myBook store of TaiwanMobile always open for you."
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:textSize="18dip" android:textColor="@android:color/black"
+			android:gravity="top|left" 
+			android:paddingLeft="30dip" android:paddingRight="30dip"
+			android:paddingTop="20dip" android:paddingBottom="20dip"
+			android:background="@drawable/gsi_note"/>
+		<ListView android:id="@+id/android:list"
+			android:layout_width="fill_parent" android:layout_below="@id/info"
+			android:layout_height="fill_parent" android:scrollingCache="false" />
+	</RelativeLayout>
+
+</RelativeLayout>

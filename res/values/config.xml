@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="iii_package_name">org.iii.ideas.reader</string>
+    <string name="iii_preference_name">org.iii.ideas.reader_preferences</string>
+    <string name="iii_last_page_name">org.iii.ideas.reader_last_pages</string>
+</resources>

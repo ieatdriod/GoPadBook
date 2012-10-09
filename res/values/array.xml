@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="switch_item">
+        <!--<item>依照書本預設</item>-->
+        <item>按左邊翻頁</item>
+        <item>按右邊翻頁</item>
+    </string-array>
+</resources>
